@@ -123,23 +123,28 @@ window.QCERA = {
   games: [
     {
       id: "miaomiao", play: "games/miaomiao/", logo: "assets/img/games/miaomiao/logo.webp",
-      poster: "assets/img/games/miaomiao/shot-08-s.webp",
-      facts: [["30", "关主线剧情，之后关卡不封顶", "Story levels, then no level cap"], ["11", "项猫咖装修，每项 3 款", "Café upgrades, 3 styles each"], ["2", "只店猫：大橘、狸花", "Shop cats: Daju & Lihua"], ["7", "个收纳格", "Tray slots"]],
+      poster: "assets/img/games/miaomiao/shot-07-s.webp",
+      facts: [["30", "关主线剧情，之后关卡不封顶", "Story levels, then no level cap"], ["11", "项猫咖装修，每项 3 款", "Café upgrades, 3 styles each"], ["3", "只店猫，各带一个关卡技能", "Shop cats, each with a level skill"], ["53", "件猫咪装扮", "Cat outfits"], ["20", "只会来门口做客的猫", "Cats who drop by to visit"], ["36", "张奶奶的旧物卡", "Cards of Grandma’s keepsakes"]],
       shots: [
-        ["shot-01", "第 1 关：门口的纸箱", "Level 1: the box by the door"],
-        ["shot-02", "第 3 关：大橘来捣乱", "Level 3: Daju makes mischief"],
-        ["shot-03", "第 5 关开始前：特殊关卡，主打冰封", "Before level 5: a special level built around frozen tiles"],
-        ["shot-04", "第 5 关：冰封卡片", "Level 5: frozen tiles"],
-        ["shot-05", "第 20 关：特殊关卡「前厅大扫除」", "Level 20: the special level “Front room clean-up”"],
-        ["shot-06", "一开始的杂物铺", "The junk shop at the start"],
-        ["shot-07", "装修清单：一项项把店收拾出来", "The decorating list, one job at a time"],
-        ["shot-08", "装修好的猫咖", "The finished cat café"],
-        ["shot-09", "猫咖夜景", "The café at night"],
-        ["shot-10", "我的猫：大橘", "My cats: Daju"],
-        ["shot-11", "爱心粮仓（筹备中）", "The Cat Food Bank (coming soon)"]
+        ["shot-01", "第 1 关「门口的纸箱」：小手教你点第一张卡", "Level 1, “The box by the door”: a hand shows you where to tap"],
+        ["shot-02", "第 3 关「大橘来捣乱」：它会把卡片拍回牌堆", "Level 3, “Daju makes mischief”: Daju swats tiles back onto the pile"],
+        ["shot-03", "第 5 关：特殊关卡，主打冰封卡片", "Level 5: a special level built around frozen tiles"],
+        ["shot-04", "第 20 关：特殊关卡「前厅大扫除」", "Level 20: the special level “Front room clean-up”"],
+        ["shot-05", "一开始的杂物铺", "The junk shop at the start"],
+        ["shot-06", "装修清单：11 项，一项项把店收拾出来", "The decorating list: 11 jobs, one at a time"],
+        ["shot-07", "装修好的猫咖", "The finished cat café"],
+        ["shot-08", "猫咖夜景", "The café at night"],
+        ["shot-09", "我的猫：成长阶段、亲密度、健康和关卡技能", "My cats: life stage, affection, health and level skill"],
+        ["shot-10", "大橘的衣柜", "Daju’s wardrobe"],
+        ["shot-11", "赵叔杂货铺：只收小鱼干，明码标价", "Uncle Zhao’s store: dried fish only, prices on every item"],
+        ["shot-12", "门口：放一碗吃的，等猫来做客、留回礼", "The doorstep: leave a bowl out, and visiting cats leave a gift"],
+        ["shot-13", "奶奶的旧物收藏册", "Grandma’s keepsake album"],
+        ["shot-14", "街角宠物药店：林医生给大橘看感冒", "The corner pet pharmacy: Dr Lin sees Daju about a cold"],
+        ["shot-15", "猫爬架挑战塔", "The cat-tree challenge tower"],
+        ["shot-16", "爱心粮仓（筹备中）", "The Cat Food Bank (coming soon)"]
       ],
       charity: {
-        shot: 10,
+        shot: 15,
         zh: {
           label: "爱心粮仓 · 筹备中",
           title: "游戏里照顾大橘，现实里帮流浪猫",
@@ -156,20 +161,42 @@ window.QCERA = {
         }
       },
       zh: {
-        name: "喵喵收纳馆", kind: "休闲益智 · 三消收纳", tagline: "收拾奶奶的老杂物铺，把它开成一家猫咖",
-        desc: "玩家继承了奶奶的老杂物铺，店里堆满几十年的旧东西，还住着一只赖着不走的橘猫“大橘”。每过一关，就是收拾店里的一个角落；收拾出来的地方装修成猫咖；搬进来的猫，又会到关卡里帮忙。",
-        genres: ["三消收纳", "猫咖经营", "养猫", "剧情"],
-        rules: ["点一张卡片，它会进到下面的收纳格。", "收纳格里凑齐 3 张一样的物品，这 3 张立刻消除。", "7 个收纳格全部放满、又没有发生消除，就算失败。"],
-        features: ["爱心粮仓：玩家认真照顾猫，公司替大家养真流浪猫（筹备中）", "关卡里逐步加入冰封卡片、隐藏物品和大橘捣乱", "移出、撤回、洗牌三种道具，洗牌后保证仍然有解", "猫咖 11 个装修项目，营业收入、离线收入和特别订单", "撸猫、喂猫、亲密度，店猫还会带着技能到关卡里帮忙", "第 30 关以后关卡不封顶；第 10 关后开放每日挑战"],
+        name: "喵喵收纳馆", kind: "休闲益智 · 三消收纳", tagline: "大橘又把杂物铺弄乱了，快帮它收拾干净",
+        desc: "奶奶留下一间老杂物铺：几十年的旧东西堆到天花板，还住着一只赖着不走的橘猫“大橘”。每过一关，就收拾出店里的一个角落，装修成一家暖洋洋的猫咖；翻出来的旧物件，一点点拼出奶奶当年的故事；搬进来的猫，又会带着各自的本领回到关卡里帮你。",
+        genres: ["三消收纳", "猫咖经营", "养猫", "收集", "剧情"],
+        rules: ["点一张没被压住的卡片，它会飞进下面的收纳格。", "收纳格里凑齐 3 张一样的物品，就会一起消除。", "卡片全部收完就过关；7 个格子塞满又没有消除，就算失败。"],
+        features: [
+          ["关卡", "每一关收拾一个角落，冰封卡片、隐藏物品、大橘捣乱陆续登场。每一关都保证一定有解，洗牌之后也一样。"],
+          ["道具和好运", "移出、撤回、洗牌三种道具。轻松关一次过关能点亮好运小灯，特殊关一开局就送帮手；同一关连输两次，送一次移出。"],
+          ["猫咖经营", "11 项装修，每项 3 款随时可换。开门营业赚小鱼干，离线也有收入，还有特别订单和夜景。"],
+          ["三只店猫", "大橘、狸花、糯米各有性格和故事。撸猫、喂猫攒亲密度，8 级解锁专属小动作、第 4 段故事和专属装扮；关卡里各有本领：猫爪、眼尖、叼一张。"],
+          ["猫咪成长", "猫咪分幼猫、成年、老年三个阶段，每天吃猫粮罐里的早饭。偶尔生点小病，街角宠物药店的林医生会帮忙，第一次看病免费。"],
+          ["装扮和猫角落", "赵叔杂货铺分批上新：53 件装扮在衣柜里给猫换上，15 件猫角落家具，猫会自己钻进去睡觉、玩耍。街角扭蛋机每天免费扭一次，概率公开。"],
+          ["门口来客", "在门口放一碗吃的、摆一个玩具，过一会儿就有猫来做客，还会留下回礼。20 只来访的猫收进相册，其中一只还可能留下来当店猫。"],
+          ["奶奶的收藏册", "4 页 36 张旧物卡，过关就能翻卡。集齐一页，解锁一幅回忆插画，店里也多一个摆件。"],
+          ["每天都有新鲜事", "早安小报、七日开店礼、猫爪日历。第 10 关后开放每日挑战，第 15 关后开放猫爬架挑战塔，每周一重新开始。"],
+          ["爱心粮仓（筹备中）", "玩家在游戏里认真照顾猫，公司替大家养真的流浪猫，规则见上方。"]
+        ],
         platform: "网页版：手机、电脑浏览器打开就能玩，无需下载。抖音小游戏版筹备中。",
         note: "游戏为简体中文；进度保存在当前浏览器里，换设备或清除浏览器数据后会从头开始。"
       },
       en: {
-        name: "Miaomiao Shounaguan", kind: "Casual puzzle · tile matching", tagline: "Tidy up Grandma's old junk shop and turn it into a cat café",
-        desc: "You inherit Grandma's old junk shop, piled high with decades of clutter and home to Daju, a ginger cat who refuses to leave. Every level clears another corner of the shop; every cleared corner becomes part of a cat café; and the cats who move in come back to help you in the levels.",
-        genres: ["Tile matching", "Café management", "Cat care", "Story"],
-        rules: ["Tap a tile and it drops into the tray below.", "Collect 3 identical items in the tray and they clear at once.", "If all 7 tray slots fill up without a match, the level is lost."],
-        features: ["The Cat Food Bank: players look after cats, and the company helps keep real stray cats (coming soon)", "New mechanics arrive level by level: frozen tiles, hidden items and Daju's mischief", "Three tools — remove, undo and shuffle; a shuffle always leaves the level solvable", "11 café upgrades, with shop income, offline earnings and special orders", "Pet and feed your cats to build affection; each cat brings a skill into the levels", "No level cap after level 30; a daily challenge unlocks after level 10"],
+        name: "Miaomiao Shounaguan", kind: "Casual puzzle · tile matching", tagline: "Daju has messed up the junk shop again. Help tidy it up!",
+        desc: "Grandma has left you her old junk shop: decades of clutter piled to the ceiling, plus Daju, a ginger cat who refuses to leave. Every level clears another corner, which you turn into part of a cosy cat café. The old things you dig up piece together Grandma’s story, and the cats who move in bring their own skills back into the levels to help you.",
+        genres: ["Tile matching", "Café management", "Cat care", "Collecting", "Story"],
+        rules: ["Tap any tile that isn’t covered and it flies into the tray below.", "Get 3 identical items in the tray and they clear together.", "Clear every tile to win. If all 7 tray slots fill up with no match, the level is lost."],
+        features: [
+          ["Levels", "Each level tidies one corner, with frozen tiles, hidden items and Daju’s mischief arriving as you go. Every level is guaranteed to be solvable, even after a shuffle."],
+          ["Tools and luck", "Three tools: remove, undo and shuffle. Clear an easy level on the first try to light a lucky lantern, and special levels start with a helping hand; lose the same level twice and you get a free remove."],
+          ["Run the café", "11 upgrades with 3 styles each, swappable any time. Open up to earn dried fish, even while you’re away, plus special orders and a night view."],
+          ["Three shop cats", "Daju, Lihua and Nuomi each have a personality and a story. Pet and feed them to build affection up to level 8, which unlocks special moves, a fourth story chapter and an exclusive outfit. In the levels each has a skill: Paw, Sharp Eyes and Snatch."],
+          ["Growing up", "Cats go from kitten to adult to senior and eat breakfast from the food jar every day. If one gets a little sick, Dr Lin at the corner pet pharmacy helps, and the first visit is free."],
+          ["Outfits and the cat corner", "Uncle Zhao’s store restocks in batches: 53 outfits to dress your cats in, and 15 pieces of cat-corner furniture they curl up in or play on. The street-corner capsule machine gives one free spin a day, with the odds posted."],
+          ["Visitors at the door", "Leave a bowl of food and a toy by the door, and before long a cat drops by and leaves a gift. 20 visiting cats go into an album, and one of them may stay on as a shop cat."],
+          ["Grandma’s album", "4 pages and 36 keepsake cards, turned over as you clear levels. Finish a page to unlock a memory illustration and a new ornament for the shop."],
+          ["Something new every day", "A morning paper, a 7-day opening gift and a paw-stamp calendar. A daily challenge opens after level 10, and the cat-tree challenge tower after level 15, restarting every Monday."],
+          ["Cat Food Bank (coming soon)", "Players look after cats in the game, and the company helps keep real stray cats. See the rules above."]
+        ],
         platform: "Web version: plays in any phone or desktop browser, no download needed. A Douyin mini-game version is in preparation.",
         note: "The game is in Simplified Chinese. Progress is saved in this browser and starts over on another device or after clearing browser data."
       }
