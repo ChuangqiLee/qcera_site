@@ -30,7 +30,6 @@
   color-scheme:dark;
 }
 @view-transition{navigation:auto}
-::view-transition-old(root),::view-transition-new(root){animation-duration:.32s}
 
 *,*::before,*::after{box-sizing:border-box}
 html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header-h) + 24px)}
@@ -832,3 +831,165 @@ html:not([lang=en]) .gm-name-en{display:none}
   html,body{background:#fff!important;color:#000!important}body::before,body::after,.footer-word{display:none}
   h1,h2,h1 *,h2 *,.stat-value,.ds-stats strong{-webkit-text-fill-color:#000!important;background:none!important}
   .js .reveal,.tw{opacity:1!important;filter:none!important;transform:none!important}}
+
+/* ---------- Brand motion (brand.js): the vector logo, first-visit intro, scroll orbit,
+   footer wordmark, About construction drawing and the 404 orbit */
+.qb-t,.qb-l{fill:#f2f5fb}
+.qb-b,.qb-c{fill:#ff6e2e}
+.brand.has-svg img{display:none}
+.qb-svg{display:block;width:96px;height:auto;overflow:visible;transition:opacity .3s}
+.brand:not(.is-run) .qb-run{display:none}
+.qb-run path{fill:none;stroke-width:48;stroke-linecap:round;stroke-dasharray:.16 3;stroke-dashoffset:.16;opacity:0}
+.qb-run-t{stroke:#4f86ff}
+.qb-run-b{stroke:#ffd3ae}
+.brand.is-run .qb-run path{animation:qbRun 1.2s cubic-bezier(.45,0,.2,1) forwards}
+.brand.is-run .qb-run-b{animation-delay:.05s}
+@keyframes qbRun{0%{stroke-dashoffset:.16;opacity:0}12%,80%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.brand.is-hidden .qb-svg{opacity:0;transition:none}
+.brand.is-landed .qb-svg{animation:qbLand .9s var(--ease)}
+@keyframes qbLand{35%{filter:drop-shadow(0 0 6px rgba(255,190,150,.5))}}
+@media (max-width:640px){.qb-svg{width:82px}}
+
+/* intro: the head script's cover holds the first paint, lifting itself if this never runs */
+html.qc-intro-on::before{content:'';position:fixed;inset:0;z-index:9995;background:var(--bg);pointer-events:none;animation:qcLift .45s ease 1.7s forwards}
+@keyframes qcLift{to{opacity:0;visibility:hidden}}
+.qc-intro-run .reveal.is-in{opacity:0;transform:translateY(26px)}
+.qc-intro-run .tw-in .tw{opacity:0;filter:blur(10px);transform:translateY(.32em)}
+.qc-intro-run .flicker{animation:none}
+.qc-intro{position:fixed;inset:0;z-index:9995;display:grid;place-items:center;background-color:var(--bg);overflow:hidden;transition:background-color .8s cubic-bezier(.6,0,.2,1)}
+.qc-intro::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity 1s;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;background-position:center;
+  -webkit-mask-image:radial-gradient(ellipse 55% 50% at 50% 50%,#000 10%,transparent 75%);mask-image:radial-gradient(ellipse 55% 50% at 50% 50%,#000 10%,transparent 75%)}
+.qc-intro::after{content:'';position:absolute;left:50%;top:50%;width:120vmax;height:120vmax;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity 1.2s;
+  background:radial-gradient(closest-side,rgba(110,168,255,.08),rgba(255,110,46,.04) 45%,transparent 70%)}
+.qc-intro.is-on::before,.qc-intro.is-on::after{opacity:1}
+.qc-intro.is-leaving{background-color:rgba(5,6,10,0);pointer-events:none}
+.qc-intro.is-leaving::before,.qc-intro.is-leaving::after{opacity:0;transition-duration:.4s}
+.qi-stage{position:relative;display:flex;flex-direction:column;align-items:center;width:min(760px,86vw)}
+.qi-logo{display:block;width:100%;height:auto;overflow:visible;transform-origin:0 0;transition:transform .86s cubic-bezier(.7,0,.16,1)}
+.qi-ghost{transition:opacity .7s}
+.qi-ghost path{fill:none;stroke:rgba(255,255,255,.22);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+.qc-intro.is-on .qi-ghost path{stroke-dashoffset:0}
+.qc-intro.is-landed .qi-ghost,.qc-intro.is-done .qi-ghost{opacity:0}
+.qi-l,.qi-c{opacity:0}
+.qi-l.on{animation:qiFlick .44s linear forwards}
+.qi-c{transform-box:fill-box;transform-origin:50% 100%}
+.qi-c.on{animation:qiRise .6s var(--ease) forwards}
+.qi-l.now,.qi-c.now{animation:none;opacity:1;transform:none}
+@keyframes qiFlick{0%{opacity:0}10%{opacity:.95}22%{opacity:.15}36%{opacity:1}50%{opacity:.4}64%,100%{opacity:1}}
+@keyframes qiRise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.qi-beam{opacity:0;transition:opacity .3s}
+.qc-intro.is-lit .qi-beam{opacity:1}
+.qc-intro.beam-off .qi-beam{opacity:0}
+.qi-comet{opacity:0;transition:opacity .3s}
+.qc-intro.is-lit .qi-comet{opacity:1}
+.qc-intro.is-landed .qi-comet{opacity:0;transition-duration:.6s}
+.qi-tail{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.qi-ct .qi-tail{stroke:#9cc2ff}
+.qi-cb .qi-tail{stroke:#ff8a50}
+.qi-tail.a{stroke-width:10;opacity:.1}
+.qi-tail.b{stroke-width:4.5;opacity:.32}
+.qi-tail.c{stroke-width:2;opacity:.95;stroke:#fff}
+.qi-core{fill:#fff}
+.qi-flash{fill:none;stroke:#fff;stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:0;transform-box:fill-box;transform-origin:center}
+.qc-intro.is-landed .qi-flash{animation:qiFlash .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes qiFlash{0%{opacity:.95;transform:scale(.1)}100%{opacity:0;transform:scale(3.4)}}
+.qc-intro.is-landed .qi-fill{animation:qiGlow 1.1s ease-out}
+@keyframes qiGlow{30%{filter:drop-shadow(0 0 16px rgba(255,150,90,.42)) drop-shadow(0 0 34px rgba(110,168,255,.22))}}
+.qi-cap{display:flex;align-items:center;gap:14px;margin:clamp(28px,4.4vw,48px) 0 0;font:500 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap;opacity:0;transform:translateY(8px);transition:opacity .6s,transform .9s var(--ease)}
+.qi-cap i{width:34px;height:1px;background:var(--line-3)}
+.qc-intro.cap-on .qi-cap{opacity:1;transform:none}
+.qi-bar{position:relative;width:min(240px,50vw);height:1px;margin-top:20px;background:rgba(255,255,255,.08);overflow:hidden}
+.qi-bar i{position:absolute;inset:0;background:linear-gradient(90deg,#6ea8ff,#ff6e2e);transform-origin:0 50%;transform:scaleX(0)}
+.qc-intro.is-on .qi-bar i{transform:scaleX(1);transition:transform 1.9s cubic-bezier(.4,0,.2,1)}
+.qi-skip{position:absolute;right:max(22px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);opacity:0;transition:opacity .5s .7s}
+.qc-intro.is-on .qi-skip{opacity:1}
+.qc-intro.is-leaving :is(.qi-cap,.qi-bar,.qi-skip,.qi-ghost,.qi-beam,.qi-comet){opacity:0!important;transition:opacity .25s!important}
+@media (max-width:640px){.qi-cap{gap:10px;font-size:10px;letter-spacing:.18em}.qi-cap i{width:20px}}
+
+/* scroll orbit: back to top, the arcs fill with reading progress */
+.qc-orbit{position:fixed;right:max(18px,calc(env(safe-area-inset-right) + 12px));bottom:max(18px,calc(env(safe-area-inset-bottom) + 12px));z-index:900;display:grid;place-items:center;width:54px;height:54px;border:1px solid var(--line);border-radius:50%;
+  background:rgba(10,12,18,.62);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:var(--ring);
+  opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;transition:opacity .4s,transform .5s var(--ease),border-color .3s}
+.qc-orbit.is-shown{opacity:1;transform:none;pointer-events:auto}
+.qc-orbit:hover,.qc-orbit:focus-visible{border-color:var(--line-3)}
+.qc-orbit.is-full{border-color:rgba(var(--orange-rgb),.45)}
+.qo-svg{width:40px;height:auto;overflow:visible}
+.qo-ring{transform-box:view-box;transform-origin:352.8px 161.1px}
+.qc-orbit:hover .qo-ring{animation:qoSpin 1.1s var(--ease)}
+@keyframes qoSpin{to{transform:rotate(360deg)}}
+.qo-base path{fill:rgba(255,255,255,.14)}
+.qo-arrow{fill:none;stroke:var(--ink-2);stroke-width:15;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease),stroke .3s}
+.qc-orbit:hover .qo-arrow{stroke:#fff;transform:translateY(-22px)}
+@media (max-width:640px){.qc-orbit{width:46px;height:46px}.qo-svg{width:33px}}
+
+/* footer: the wordmark under a roving spotlight */
+.footer-word.is-logo{width:min(var(--wrap),100% - var(--gutter) * 2);margin:28px auto 0;font-size:0;line-height:0;background:none;-webkit-text-fill-color:currentColor;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 52%,transparent 98%);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 52%,transparent 98%)}
+.qf-svg{display:block;width:100%;height:auto;overflow:visible}
+.qf-line path{fill:rgba(255,255,255,.022);stroke:rgba(255,255,255,.15);stroke-width:1;vector-effect:non-scaling-stroke}
+
+/* About: construction drawing of the logo */
+.qc-blueprint{position:relative;max-width:620px;margin:44px 0 0;color:var(--dim);font:500 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.bp-head{display:flex;justify-content:space-between;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.bp-read{color:var(--muted);font-variant-numeric:tabular-nums;transition:color .2s}
+.is-reading .bp-read{color:var(--accent)}
+.bp-svg{display:block;width:100%;height:auto;margin-top:12px;overflow:visible}
+.bp-foot{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);text-align:right}
+.bp-grid,.bp-guides,.bp-labels{opacity:0;transition:opacity 1s ease}
+.qc-blueprint.is-on .bp-grid{opacity:1}
+.qc-blueprint.is-on .bp-guides{opacity:1;transition-delay:.35s}
+.qc-blueprint.is-on .bp-labels{opacity:1;transition-delay:1.5s}
+.bp-grid path{stroke:rgba(255,255,255,.07);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:2 6}
+.bp-grid .bp-axis{stroke:rgba(var(--accent-rgb),.16);stroke-dasharray:none}
+.bp-ray{stroke:rgba(var(--accent-rgb),.38);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:4 5}
+.bp-sweep{fill:none;stroke:rgba(var(--accent-rgb),.65);stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1) .6s}
+.qc-blueprint.is-on .bp-sweep{stroke-dashoffset:0}
+.bp-orbit{fill:none;stroke:rgba(255,255,255,.32);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1 5}
+.bp-o{fill:var(--bg);stroke:var(--accent);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.bp-corner{fill:none;stroke:var(--line-3);stroke-width:1;vector-effect:non-scaling-stroke}
+.bp-draw path{stroke:rgba(255,255,255,.6);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1 1;stroke-dashoffset:1;fill-opacity:0;
+  transition:stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1) calc(var(--d,0) * 1ms),fill-opacity .9s ease calc(1300ms + var(--d,0) * .5ms),stroke .9s ease 1.6s}
+.qc-blueprint.is-on .bp-draw path{stroke-dashoffset:0;fill-opacity:.94;stroke:rgba(255,255,255,0)}
+.bp-t{fill:var(--dim);font:500 15px var(--mono);letter-spacing:.12em}
+.bp-num{fill:rgba(var(--accent-rgb),.85);text-anchor:middle;font-size:14px}
+.bp-side{font-size:13px}
+.bp-call{fill:var(--muted)}
+.bp-end{text-anchor:end}
+.bp-comet circle{opacity:0;transition:opacity .4s}
+.comet-on .bp-comet circle{opacity:1}
+.bp-c1{fill:#dbe7ff;filter:drop-shadow(0 0 5px #6ea8ff) drop-shadow(0 0 12px #6ea8ff)}
+.bp-c2{fill:#ffe0cc;filter:drop-shadow(0 0 5px #ff6e2e) drop-shadow(0 0 12px #ff6e2e)}
+.bp-cross{opacity:0;transition:opacity .2s;pointer-events:none}
+.is-reading .bp-cross{opacity:1}
+.bp-cross path{stroke:var(--accent);stroke-width:1;vector-effect:non-scaling-stroke}
+.bp-cross circle{fill:none;stroke:rgba(var(--accent-rgb),.5);stroke-width:1;vector-effect:non-scaling-stroke}
+.qc-blueprint.is-static .bp-draw path{transition:none}
+@media (min-width:1180px){
+  .has-blueprint .wrap{position:relative}
+  .has-blueprint .lead{max-width:min(720px,calc(100% - clamp(380px,100% - 700px,540px) - 48px))}
+  .has-blueprint .qc-blueprint{position:absolute;right:0;top:34px;width:clamp(380px,100% - 700px,540px);margin:0}
+}
+@media (max-width:759px){.qc-blueprint{display:none}}
+
+/* 404: the arcs keep circling the missing page */
+.nf-stage{position:relative;isolation:isolate;font-size:clamp(110px,24vw,280px)}
+.nf-orbit{position:absolute;left:50%;top:50%;z-index:-1;width:2.3em;height:auto;transform:translate(-50%,-50%);overflow:visible;pointer-events:none}
+.nf-spin{transform-box:view-box;transform-origin:352.8px 161.1px;animation:qoSpin 30s linear infinite}
+.nf-spin path{fill:none;stroke-width:2;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.nf-t{stroke:rgba(242,245,251,.32)}
+.nf-b{stroke:rgba(255,110,46,.5)}
+
+/* moving between pages: the new page opens like an orbit */
+.site-header{view-transition-name:qc-header}
+::view-transition-group(qc-header){animation-duration:0s}
+::view-transition-old(root){animation:qvtOut .62s cubic-bezier(.7,0,.2,1) both}
+::view-transition-new(root){animation:qvtIn .62s cubic-bezier(.7,0,.2,1) both}
+@keyframes qvtOut{to{opacity:.25;transform:scale(.975)}}
+@keyframes qvtIn{from{clip-path:ellipse(0% 0% at 50% 50%)}to{clip-path:ellipse(76% 76% at 50% 50%)}}
+@media (prefers-reduced-motion:reduce){
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+  .nf-spin,.qc-orbit:hover .qo-ring{animation:none}
+}
+@media print{.qc-orbit,.qc-intro,.qc-blueprint,.nf-orbit{display:none!important}}
+/* ---------- end brand motion */
