@@ -714,7 +714,10 @@
         return '<div class="gm-fact"><strong>' + esc(f[0]) + '</strong>' + t(f[1], f[2]) + '</div>';
       }).join('');
       var rules = z.rules.map(function (s, j) { return '<li><span>' + pad(j + 1) + '</span>' + t(s, en.rules[j]) + '</li>'; }).join('');
-      var feats = z.features.map(function (s, j) { return t(s, en.features[j], 'li'); }).join('');
+      var feats = z.features.map(function (f, j) {
+        var fe = en.features[j];
+        return '<li>' + t(f[0], fe[0], 'strong') + t(f[1], fe[1], 'span') + '</li>';
+      }).join('');
       var shots = g.shots.map(function (s, j) {
         return '<button class="gm-shot" type="button" data-i="' + j + '">' +
           '<span class="gm-shot-img"><img src="' + ROOT + dir + s[0] + '-s.webp" alt="' + esc(s[1]) + '" data-en-alt="' + esc(s[2]) + '" width="390" height="844" loading="lazy" decoding="async"></span>' +
