@@ -1840,6 +1840,12 @@ html[lang="en"] .hero-title {
     transform: translateY(0);
 }
 
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .logo-copy {
+        display: none;
+    }
+}
+
 @media (max-width: 1199.98px) {
     body > .header {
         position: fixed;

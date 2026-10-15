@@ -13,6 +13,7 @@
             "nav.platforms": "Platforms",
             "nav.equipment": "Equipment",
             "nav.datasets": "Datasets",
+            "nav.followup": "Follow-up ↗",
             "nav.hospitals": "Hospitals",
             "hero.eyebrow": "Medical Biotech · Integrated Research Services",
             "hero.title": "Technology-Driven Medical Research<br>Innovation Leading Translational Impact",
