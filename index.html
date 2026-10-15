@@ -1,285 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>奇创纪元 | 医疗生物科技一体化服务</title>
-    <meta name="description" content="北京奇创纪元科技有限公司 — 硕博团队组成，与知名高校合作，利用科学技术创新，实现科研成果转化。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-en="Qichuang Era | Technology-driven medical research">奇创纪元 | 科技驱动医学研究 · 创新引领成果转化</title>
+<meta name="description" content="北京奇创纪元科技有限公司：硕博团队组成，与知名高校合作，提供生信、细胞、机制、动物、材料五大实验平台与一体化科研服务，实现科研成果转化。" data-en-content="Beijing Qichuang Era Technology: a master&#x27;s and doctoral team partnering with renowned universities, offering five laboratory platforms and integrated research services for translational research.">
+<meta name="theme-color" content="#05060a">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="奇创纪元 Qichuang Era">
+<meta property="og:title" content="奇创纪元 | 科技驱动医学研究 · 创新引领成果转化">
+<meta property="og:description" content="北京奇创纪元科技有限公司：硕博团队组成，与知名高校合作，提供生信、细胞、机制、动物、材料五大实验平台与一体化科研服务，实现科研成果转化。">
+<meta property="og:image" content="https://ds-kb-lab.github.io/qcera_web/assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('qcera-lang');if(l==='en')document.documentElement.lang='en'}catch(e){}</script>
+<script>(function(){var m={about:'about/',platforms:'platforms/',equipment:'equipment/',datasets:'datasets/',hospitals:'hospitals/',partners:'partners/',footer:'contact/'};var h=location.hash.slice(1);if(m[h])location.replace(m[h]+location.search)})()</script>
 </head>
-<body>
-<div class="page-noise" aria-hidden="true"></div>
-
-<header class="header" id="header">
-    <div class="container header-inner">
-        <a class="logo" href="#hero">
-            <img class="logo-img" src="company-logo.png" alt="奇创纪元">
-            <div class="logo-copy">
-                <span class="logo-kicker" data-i18n="brand.kicker">医学研究转化工作台</span>
-            </div>
-        </a>
-        <nav class="main-nav" id="main-nav">
-            <a href="#about" data-i18n="nav.about">关于我们</a>
-            <a href="#platforms" data-i18n="nav.platforms">实验平台</a>
-            <a href="#equipment" data-i18n="nav.equipment">仪器设备</a>
-            <a href="#datasets" data-i18n="nav.datasets">核心数据集</a>
-            <a href="follow-up.html" data-i18n="nav.followup">随访平台 ↗</a>
-            <a href="#hospitals" data-i18n="nav.hospitals">合作医院</a>
-        </nav>
-        <div class="header-right">
-            <div class="lang-toggle" id="lang-toggle">
-                <button data-lang="zh" class="active">中文</button>
-                <button data-lang="en">EN</button>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+<body data-page="home">
+<a class="skip" href="#main" data-en="Skip to content">跳到正文</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="" aria-label="奇创纪元 首页" data-en-aria-label="Qichuang Era home"><img src="assets/img/logo-light.webp" alt="奇创纪元 Qichuang Era" width="560" height="234"></a>
+    <nav class="nav" id="site-nav" aria-label="主导航" data-en-aria-label="Main">
+      <a href="about/"><span class="nav-index">01</span><span data-en="About">关于我们</span></a>
+      <a href="platforms/"><span class="nav-index">02</span><span data-en="Platforms">实验平台</span></a>
+      <a href="equipment/"><span class="nav-index">03</span><span data-en="Equipment">仪器设备</span></a>
+      <a href="datasets/"><span class="nav-index">04</span><span data-en="Datasets">数据集</span></a>
+      <a href="followup/"><span class="nav-index">05</span><span data-en="Follow-up">随访平台</span></a>
+      <a href="hospitals/"><span class="nav-index">06</span><span data-en="Hospitals">合作医院</span></a>
+      <a href="partners/"><span class="nav-index">07</span><span data-en="Partners">合作单位</span></a>
+      <a href="contact/"><span class="nav-index">08</span><span data-en="Contact">联系我们</span></a>
+    </nav>
+    <div class="header-tools">
+      <button class="lang" id="lang-toggle" type="button" aria-label="Switch to English"><span class="lang-zh">中</span><span class="lang-sep">/</span><span class="lang-en">EN</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="菜单" data-en-aria-label="Menu"><i></i><i></i></button>
     </div>
+  </div>
 </header>
-
-<main>
-
-<!-- ==================== HERO ==================== -->
-<section class="hero" id="hero">
-    <div class="hero-bg-shapes">
-        <div class="hero-shape hero-shape-1"></div>
-        <div class="hero-shape hero-shape-2"></div>
-        <div class="hero-shape hero-shape-3"></div>
+<main id="main">
+<section class="home-hero">
+  <div class="wrap home-hero-grid">
+    <div class="home-hero-copy">
+      <span class="badge reveal"><span class="dot"></span><span data-en="Medical biotech · Integrated research services">医疗生物科技 · 一体化科研服务</span></span>
+      <h1 class="reveal"><span class="glitch" data-en="Technology-driven medical research ">科技驱动医学研究</span><em data-en="Innovation-led translation">创新引领成果转化</em></h1>
+      <p class="lead reveal" data-en="A technical team of master&#x27;s and doctoral researchers working with renowned universities, turning scientific innovation into research outcomes and meeting the diverse needs of research through one integrated service.">由硕博技术团队组成，与知名高校合作，利用科学技术创新，实现科研成果转化。公司致力于通过“一体化”服务满足科研领域内的多样化需求。</p>
+      <div class="actions reveal">
+        <a class="btn btn-primary" href="platforms/"><span data-en="Explore platforms">探索实验平台</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn" href="hospitals/"><span data-en="View the network">查看合作网络</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-trace reveal"><span>Bench → Bedside</span><span data-en="Data · Experiment · Translation">数据 · 实验 · 转化</span><span data-en="Universities × Hospitals × Journals">高校 × 医院 × 期刊</span></div>
     </div>
-    <div class="container hero-shell">
-        <div class="hero-copy">
-            <p class="hero-eyebrow" data-i18n="hero.eyebrow">Medical Biotech · Integrated Research Services</p>
-            <h1 class="hero-title" data-i18n="hero.title">科技驱动医学研究<br>创新引领成果转化</h1>
-            <p class="hero-desc" data-i18n="hero.desc">由硕博技术团队组成，与知名高校合作，利用科学技术创新，实现科研成果转化。公司致力于通过"一体化"服务满足科研领域内的多样化需求。</p>
-            <div class="hero-actions">
-                <a href="#platforms" class="btn btn-primary" data-i18n="hero.btn1">探索实验平台</a>
-                <a href="#hospitals" class="btn btn-outline" data-i18n="hero.btn2">查看合作网络</a>
-            </div>
-            <div class="hero-notes">
-                <article class="hero-note reveal">
-                    <span class="hero-note-label" data-i18n="hero.note1.label">合规与留痕</span>
-                    <p data-i18n="hero.note1.body">高清监控、实验记录与数据分级存储，确保研究流程可追溯。</p>
-                </article>
-                <article class="hero-note reveal">
-                    <span class="hero-note-label" data-i18n="hero.note2.label">平台协同</span>
-                    <p data-i18n="hero.note2.body">生信、细胞、机制、动物与材料平台串联，减少项目切换成本。</p>
-                </article>
-                <article class="hero-note reveal">
-                    <span class="hero-note-label" data-i18n="hero.note3.label">转化出口</span>
-                    <p data-i18n="hero.note3.body">从课题设计到文章发表，以统一团队推进科研成果落地。</p>
-                </article>
-            </div>
-        </div>
-        <aside class="hero-panel reveal">
-            <div class="hero-panel-top">
-                <span class="hero-panel-kicker" data-i18n="hero.panel.kicker">Research Command Deck</span>
-                <h2 class="hero-panel-title" data-i18n="hero.panel.title">一体化医学研发工作台</h2>
-                <p class="hero-panel-desc" data-i18n="hero.panel.desc">将实验能力、临床协作、数据资产与论文产出压缩为一张可快速阅读的业务全景图。</p>
-            </div>
-            <div class="hero-stats" id="hero-stats"></div>
-            <div class="hero-panel-foot">
-                <div class="hero-foot-item">
-                    <span data-i18n="hero.panel.foot1.label">服务模型</span>
-                    <strong data-i18n="hero.panel.foot1.value">Bench to bedside</strong>
-                </div>
-                <div class="hero-foot-item">
-                    <span data-i18n="hero.panel.foot2.label">研究路径</span>
-                    <strong data-i18n="hero.panel.foot2.value">数据 · 实验 · 转化</strong>
-                </div>
-                <div class="hero-foot-item">
-                    <span data-i18n="hero.panel.foot3.label">合作结构</span>
-                    <strong data-i18n="hero.panel.foot3.value">高校 × 医院 × 期刊</strong>
-                </div>
-            </div>
-        </aside>
+    <div class="helix-stage" aria-hidden="true">
+      <canvas id="helix"></canvas>
+      <div class="hud"><i></i><i></i><i></i><i></i><b class="tl">QCERA · RESEARCH ENGINE</b><b class="br"><span class="live"></span>BENCH → BEDSIDE</b></div>
+      <div class="helix-legend"><span><i style="background:#6ea8ff;box-shadow:0 0 8px #6ea8ff"></i>DATA</span><span><i style="background:#a58cff;box-shadow:0 0 8px #a58cff"></i>EXPERIMENT</span><span><i style="background:#ff7a3d;box-shadow:0 0 8px #ff7a3d"></i>TRANSLATION</span></div>
     </div>
-    <div class="hero-ticker">
-        <div class="container hero-ticker-track">
-            <span data-i18n="hero.ticker.1">生信、细胞、机制、动物、材料与文章服务协同推进</span>
-            <span data-i18n="hero.ticker.2">高校合作与医院网络并行驱动项目转化效率</span>
-            <span data-i18n="hero.ticker.3">数据安全、实验留痕与成果发表形成闭环</span>
-        </div>
-    </div>
+  </div>
+  <div class="wrap home-stats">
+    <div class="stats reveal" style="--n:4"><div class="stat"><span class="stat-index">01</span><span class="stat-value"><span data-stat="institutions" data-count="85">85</span></span><span class="stat-label" data-en="Partner hospitals &amp; institutions">合作医院及机构</span></div><div class="stat"><span class="stat-index">02</span><span class="stat-value"><span data-stat="journals" data-count="51">51</span></span><span class="stat-label" data-en="Published journals">发表学术期刊</span></div><div class="stat"><span class="stat-index">03</span><span class="stat-value"><span data-stat="partners" data-count="63">63</span></span><span class="stat-label" data-en="Partner universities &amp; institutes">合作高校及研究所</span></div><div class="stat"><span class="stat-index">04</span><span class="stat-value"><span data-stat="datasets" data-count="5">5</span></span><span class="stat-label" data-en="Core medical datasets">核心医疗数据集</span></div></div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span data-en="Bioinformatics, cell, mechanism, animal, materials and manuscript services move as one system">生信、细胞、机制、动物、材料与文章服务协同推进</span><span data-en="University collaboration and hospital networks jointly accelerate translation">高校合作与医院网络并行驱动项目转化效率</span><span data-en="Data security, experimental traceability and publication form a closed loop">数据安全、实验留痕与成果发表形成闭环</span><span data-en="Bioinformatics, cell, mechanism, animal, materials and manuscript services move as one system">生信、细胞、机制、动物、材料与文章服务协同推进</span><span data-en="University collaboration and hospital networks jointly accelerate translation">高校合作与医院网络并行驱动项目转化效率</span><span data-en="Data security, experimental traceability and publication form a closed loop">数据安全、实验留痕与成果发表形成闭环</span></div></div>
 </section>
 
-<!-- ==================== ABOUT ==================== -->
-<section class="section about-section" id="about">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow" data-i18n="about.eyebrow">About Us</span>
-            <h2 class="section-title" data-i18n="about.title">关于奇创纪元</h2>
-            <p class="section-desc" data-i18n="about.desc">北京奇创纪元科技有限公司由硕博技术团队组成，与知名高校深度合作，通过科学技术创新实现科研成果转化，并依托自有生物实验室与医学材料实验室，为科研领域提供全流程"一体化"服务。</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-card" data-i18n-title="about.card1.title" data-i18n-body="about.card1.body">
-                <div class="about-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
-                </div>
-                <h3>高清摄像头全程监控</h3>
-                <p>实验室配备高清摄像头，全程记录实验及数据产出过程，确保无数据泄露情况发生。</p>
-            </div>
-            <div class="about-card" data-i18n-title="about.card2.title" data-i18n-body="about.card2.body">
-                <div class="about-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-                </div>
-                <h3>数据安全服务系统</h3>
-                <p>实验数据网盘专人保管，公司电脑互联文件共享，禁止外网连接，确保数据安全。</p>
-            </div>
-            <div class="about-card" data-i18n-title="about.card3.title" data-i18n-body="about.card3.body">
-                <div class="about-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
-                </div>
-                <h3>数据内外查重系统</h3>
-                <p>内查外查双管齐下：公司内部未发表数据查重与已发表数据查重，最强图片查重软件，双重保障。</p>
-            </div>
-            <div class="about-card" data-i18n-title="about.card4.title" data-i18n-body="about.card4.body">
-                <div class="about-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
-                </div>
-                <h3>规范化实验记录本</h3>
-                <p>每个项目均有专人负责，提供实验记录本，详细记录实验日期、人员、操作过程及结果，确保数据真实可靠。</p>
-            </div>
-        </div>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-en="Explore">Explore</span>
+        <h2><span data-en="Eight sections, ">八个板块，</span><em data-en="one research partner">读懂奇创纪元</em></h2></div>
+      <p class="reveal" data-en="Each section has its own page: from the team and platforms to data, the hospital network and how to work with us.">每个板块都有独立页面：从团队与平台，到数据、医院网络与合作方式。</p>
     </div>
+    <div class="directory">
+      <a class="card dir-card reveal" href="about/">
+        <span class="dir-top"><span>01 / ABOUT</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M24 4 41 14v20L24 44 7 34V14z"/><path d="M24 4v40M7 14l34 20M41 14 7 34" opacity=".35"/><circle cx="24" cy="24" r="5"/></svg></span>
+        <h3 data-en="About">关于我们</h3>
+        <p data-en="Our team, the integrated service model and research integrity system.">硕博技术团队、一体化服务模式与科研合规体系。</p>
+        <span class="dir-meta">TEAM · MODEL · INTEGRITY</span>
+      </a>
+      <a class="card dir-card reveal" href="platforms/">
+        <span class="dir-top"><span>02 / PLATFORMS</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 5h12M20 5v13L9 38a4 4 0 0 0 3.6 6h22.8A4 4 0 0 0 39 38L28 18V5"/><path d="M13 31h22" opacity=".45"/><circle cx="21" cy="37" r="1.6"/><circle cx="28" cy="34" r="1.1"/></svg></span>
+        <h3 data-en="Platforms">实验平台</h3>
+        <p data-en="Five service platforms: bioinformatics, cell, mechanism, animal and biomaterials.">生信、细胞、机制、动物、材料五大实验技术服务平台。</p>
+        <span class="dir-meta"><span data-stat="platforms">5</span> PLATFORMS · <span data-stat="modules">40</span> MODULES</span>
+      </a>
+      <a class="card dir-card reveal" href="equipment/">
+        <span class="dir-top"><span>03 / EQUIPMENT</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6l6 3-8 16-6-3z"/><path d="M15 24l-3 6M23 14a12 12 0 0 1 9 20"/><path d="M8 42h32M14 42c0-5 4-8 9-8h9" /><path d="M29 34h7v8" opacity=".5"/></svg></span>
+        <h3 data-en="Equipment">仪器设备</h3>
+        <p data-en="Flow sorting, confocal and super-resolution imaging, in vivo imaging, nano synthesis.">流式分选、共聚焦与超分辨成像、活体成像、纳米合成。</p>
+        <span class="dir-meta"><span data-stat="equipment">11</span> INSTRUMENTS</span>
+      </a>
+      <a class="card dir-card reveal" href="datasets/">
+        <span class="dir-top"><span>04 / DATASETS</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="24" cy="11" rx="15" ry="5"/><path d="M9 11v26c0 2.8 6.7 5 15 5s15-2.2 15-5V11"/><path d="M9 20c0 2.8 6.7 5 15 5s15-2.2 15-5M9 29c0 2.8 6.7 5 15 5s15-2.2 15-5" opacity=".5"/></svg></span>
+        <h3 data-en="Datasets">数据集</h3>
+        <p data-en="GI cancer, acoustic neuroma, chordoma, ophthalmology and multi-field MRI.">胃肠癌、听神经瘤、脊索瘤、眼科多模态与 MRI 多场强。</p>
+        <span class="dir-meta"><span data-stat="datasets">5</span> DATASETS</span>
+      </a>
+      <a class="card dir-card reveal" href="followup/">
+        <span class="dir-top"><span>05 / FOLLOW-UP</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="8" width="36" height="32" rx="5"/><path d="M6 16h36" opacity=".45"/><path d="M11 30h7l3-7 5 12 3-7h8"/></svg></span>
+        <h3 data-en="Follow-up">随访平台</h3>
+        <p data-en="Product plan of the patient follow-up system, with an interactive page map.">患者随访管理系统的产品规划总览与交互式页面地图。</p>
+        <span class="dir-meta">65 PAGES · 7 ENTRIES</span>
+      </a>
+      <a class="card dir-card reveal" href="hospitals/">
+        <span class="dir-top"><span>06 / HOSPITALS</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="30" r="3"/><circle cx="36" cy="14" r="3"/><circle cx="34" cy="36" r="3"/><circle cx="20" cy="12" r="2"/><path d="M14.5 28.5 33.5 15.5M15 31l16 4M35.5 17l-1 16M21.5 13.5 33 14" opacity=".55"/><path d="M12 22v-2M12 38v-2M4 30h2M18 30h2" opacity=".5"/></svg></span>
+        <h3 data-en="Hospitals">合作医院</h3>
+        <p data-en="Partner hospitals and research institutions in China and overseas.">国内（含香港）与海外合作医院及科研机构网络。</p>
+        <span class="dir-meta"><span data-stat="institutions">85</span> INSTITUTIONS</span>
+      </a>
+      <a class="card dir-card reveal" href="partners/">
+        <span class="dir-top"><span>07 / PARTNERS</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c5 5 7 11 7 18s-2 13-7 18c-5-5-7-11-7-18s2-13 7-18z"/><path d="M9 14h30M9 34h30" opacity=".45"/></svg></span>
+        <h3 data-en="Partners">合作单位</h3>
+        <p data-en="Team members come from universities and institutes across North America, Europe and Asia.">团队成员来自全球高校与科研机构，横跨北美、欧洲及亚洲。</p>
+        <span class="dir-meta"><span data-stat="partners">63</span> INSTITUTIONS</span>
+      </a>
+      <a class="card dir-card reveal" href="contact/">
+        <span class="dir-top"><span>08 / CONTACT</span><span class="dir-arrow" aria-hidden="true">→</span></span>
+        <span class="dir-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="10" width="38" height="28" rx="5"/><path d="m7 13 17 13 17-13"/><path d="M5 34l12-10M43 34 31 24" opacity=".45"/></svg></span>
+        <h3 data-en="Contact">联系我们</h3>
+        <p data-en="Collaboration e-mail, areas of collaboration and what to include.">合作邮箱、合作方向与来信建议。</p>
+        <span class="dir-meta">MAIL · BEIJING</span>
+      </a>
+      
+    </div>
+  </div>
 </section>
 
-<!-- ==================== PLATFORMS ==================== -->
-<section class="section platforms-section" id="platforms">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow" data-i18n="platforms.eyebrow">Lab Platforms</span>
-            <h2 class="section-title" data-i18n="platforms.title">五大实验技术服务平台</h2>
-            <p class="section-desc" data-i18n="platforms.desc">公司拥有自建生物实验室与医学材料实验室，配备先进仪器设备，可独立完成从分子到动物的全链路实验。</p>
-        </div>
-        <div class="platforms-grid" id="platforms-grid"></div>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-en="Lab Platforms">Lab Platforms</span>
+        <h2><span data-en="From molecules to animal models, ">从分子到动物的</span><em data-en="end to end">全链路实验</em></h2></div>
+      <p class="reveal" data-en="Our own biology and medical materials laboratories, equipped with advanced instruments, complete the full experimental pipeline from molecular to animal level.">公司拥有自建生物实验室与医学材料实验室，配备先进仪器设备，可独立完成从分子到动物的全链路实验。</p>
     </div>
+    <div class="pf-strip" id="pf-strip"></div>
+  </div>
 </section>
 
-<!-- ==================== EQUIPMENT ==================== -->
-<section class="section equipment-section" id="equipment">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow" data-i18n="equip.eyebrow">Laboratory Equipment</span>
-            <h2 class="section-title" data-i18n="equip.title">核心仪器设备展示</h2>
-            <p class="section-desc" data-i18n="equip.desc">公司配备国际一流的实验仪器设备，涵盖流式分析、共聚焦成像、超高分辨率显微、活体成像、纳米合成等核心技术领域。</p>
-        </div>
-        <div class="equipment-grid" id="equipment-grid"></div>
+<section class="section">
+  <div class="wrap net-teaser">
+    <div>
+      <span class="eyebrow" data-en="Hospital Network">Hospital Network</span>
+      <h2 style="margin-top:18px;font-size:clamp(32px,4.2vw,54px)"><span data-en="A clinical network ">连接全国的</span><em data-en="across China">临床协作网络</em></h2>
+      <p class="reveal" style="margin-top:22px;font-size:16.5px" data-en-html="Connecting &lt;b data-stat=&quot;institutions&quot;&gt;85&lt;/b&gt; hospitals and research institutions across &lt;b data-stat=&quot;cities&quot;&gt;31&lt;/b&gt; cities in China (including Hong Kong) and &lt;b data-stat=&quot;overseas&quot;&gt;1&lt;/b&gt; overseas city.">覆盖国内（含香港）<b data-stat="cities">31</b> 个城市及 <b data-stat="overseas">1</b> 个海外城市，与 <b data-stat="institutions">85</b> 家医院及科研机构开展合作。</p>
+      <div class="figures reveal">
+        <div><strong data-stat="institutions" data-count="85">85</strong><span data-en="Hospitals &amp; institutions">合作医院及机构</span></div>
+        <div><strong data-stat="cities" data-count="31">31</strong><span data-en="Partner cities in China (incl. Hong Kong)">国内合作城市（含香港）</span></div>
+        <div><strong data-stat="partners" data-count="63">63</strong><span data-en="Partner universities &amp; institutes">合作高校及研究所</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="hospitals/"><span data-en="Explore hospitals">查看合作医院</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn" href="partners/"><span data-en="Explore partners">查看合作单位</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
     </div>
+    <a class="card net-map reveal" href="hospitals/" aria-label="打开合作医院地图" data-en-aria-label="Open the hospital map">
+      <div class="net-map-head"><span><span class="live"></span>CHINA · PARTNER NETWORK</span><span class="net-legend"><span><i class="hub"></i>BEIJING</span><span><i></i><span data-en="Partner city">合作城市</span></span></span></div>
+      <svg class="net-svg" id="net-mini" viewBox="0 0 1000 738" role="img" aria-label="合作城市网络地图" data-en-aria-label="Map of partner cities"></svg>
+      <div class="hud"><i></i><i></i><i></i><i></i></div>
+    </a>
+  </div>
 </section>
 
-<!-- ==================== DATASETS ==================== -->
-<section class="section datasets-section" id="datasets">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow" data-i18n="datasets.eyebrow">Datasets</span>
-            <h2 class="section-title" data-i18n="datasets.title">核心医疗数据集</h2>
-            <p class="section-desc" data-i18n="datasets.desc">围绕胃肠癌、听神经瘤、脊索瘤、眼科多模态和MRI多场强方向，统一展示数据结构与研究价值。</p>
-        </div>
-        <div class="dataset-grid" id="dataset-grid"></div>
-        <div class="dataset-cta">
-            <a href="https://ds-kb-lab.github.io/web-project/" target="_blank" rel="noopener" class="btn btn-dataset" data-i18n="datasets.cta">
-                <span>进入数据集详情平台 →</span>
-            </a>
-            <p class="dataset-cta-hint" data-i18n="datasets.ctaHint">点击跳转至完整的医疗多模态数据集与临床合作展示平台，查看详细数据、影像预览和合作网络。</p>
-        </div>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-en="Integrated Service">Integrated Service</span>
+        <h2><span data-en="Integrated service, ">一体化服务，</span><em data-en="traceable end to end">研究全程可追溯</em></h2></div>
+      <p class="reveal" data-en="Experimental capability, clinical collaboration, data assets and publication output brought into one service workflow.">将实验能力、临床协作、数据资产与论文产出整合进同一套服务流程。</p>
     </div>
+    <div class="pillars"><div class="card pillar reveal"><span class="n">01</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M24 5 8 11v11c0 10 7 18 16 21 9-3 16-11 16-21V11z"/><path d="m17 24 5 5 9-10"/></svg></span><h3 data-en="Integrity layer">合规与留痕</h3><p data-en="HD monitoring, experiment logs and graded data storage make the whole workflow traceable.">高清监控、实验记录与数据分级存储，确保研究流程可追溯。</p></div><div class="card pillar reveal"><span class="n">02</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="24" r="4"/><circle cx="38" cy="10" r="4"/><circle cx="38" cy="38" r="4"/><circle cx="24" cy="24" r="5"/><path d="M14 24h5M28 21l7-8M28 27l7 8" /></svg></span><h3 data-en="Platform sync">平台协同</h3><p data-en="Bioinformatics, cell, mechanism, animal and materials platforms are connected to cut hand-off costs.">生信、细胞、机制、动物与材料平台串联，减少项目切换成本。</p></div><div class="card pillar reveal"><span class="n">03</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 40 40 8M22 8h18v18"/><path d="M8 26v14h14" opacity=".45"/></svg></span><h3 data-en="Translation exit">转化出口</h3><p data-en="From project design to publication, one coordinated team carries research to real output.">从课题设计到文章发表，以统一团队推进科研成果落地。</p></div></div>
+    <p style="margin-top:28px"><a class="link" href="about/"><span data-en="About our team and integrity system →">了解我们的团队与合规体系 →</span></a></p>
+  </div>
 </section>
 
-<!-- ==================== HOSPITALS ==================== -->
-<section class="section hospitals-section" id="hospitals">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow" data-i18n="hospitals.eyebrow">Hospital Network</span>
-            <h2 class="section-title" data-i18n="hospitals.title">合作医院网络</h2>
-            <p class="section-desc" data-i18n="hospitals.desc">连接国内及海外合作医院与科研机构。</p>
-        </div>
-        <div class="hospital-layout">
-            <div class="map-container">
-                <div class="map-wrapper" id="map-wrapper">
-                    <svg class="china-network-map" id="china-network-map" viewBox="0 0 1000 738" preserveAspectRatio="xMidYMid meet" role="group" aria-labelledby="china-map-title china-map-desc">
-                        <title id="china-map-title">中国合作城市网络 / China partner city network</title>
-                        <desc id="china-map-desc">合作城市节点根据 WGS84 城市中心经纬度投影到中国地图。</desc>
-                        <image class="china-map" href="assets/data/cn.svg" x="0" y="0" width="1000" height="738" preserveAspectRatio="xMidYMid meet"></image>
-                        <g class="map-links" id="map-links" aria-hidden="true"></g>
-                        <g class="map-markers" id="map-markers"></g>
-                    </svg>
-                </div>
-                <div class="map-legend">
-                    <span class="legend-item"><i class="legend-dot"></i><span data-i18n="hospitals.legendCity">合作城市</span></span>
-                    <span class="legend-item"><i class="legend-line"></i><span data-i18n="hospitals.legendLink">协作链路</span></span>
-                </div>
-                <div id="international-hospitals" class="international-hospitals"></div>
-            </div>
-            <div class="hospital-sidebar" id="hospital-sidebar"></div>
-        </div>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-en="Research Partners">Research Partners</span>
+        <h2><span data-en="Team members from ">团队成员来自</span><em data-en="universities worldwide">全球高校与科研机构</em></h2></div>
+      <p class="reveal" data-en="Across North America, Europe and Asia, connecting medicine, imaging, materials, bioinformatics and translational research.">横跨北美、欧洲及亚洲，连接医学、影像、材料、生信与转化研究。</p>
     </div>
+  </div>
+  <div id="home-marquee"></div>
+  <div class="wrap"><p style="margin-top:28px"><a class="link" href="partners/"><span data-en="View all 63 partner institutions →">查看全部 63 家合作单位 →</span></a></p></div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="card cta-band reveal">
+      <span class="eyebrow" data-en="Collaborate">Collaborate</span>
+      <h2 style="margin-top:18px"><span data-en="Start a ">开启一次</span><em data-en="research collaboration">科研合作</em></h2>
+      <p data-en="Get in touch about lab platforms, datasets, hospital collaboration or the follow-up system.">欢迎就实验平台、数据集、医院协作与随访系统与我们联系。</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:kangkang@qceratech.cn">kangkang@qceratech.cn<span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn" href="contact/"><span data-en="Contact &amp; collaboration">联系方式与合作方向</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
-
-<!-- ==================== UNIVERSITY PARTNERS ==================== -->
-<section class="partners-section" id="partners">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow" data-i18n="partners.eyebrow">Research Partners</span>
-            <h2 class="section-title" data-i18n="partners.title">科研团队合作单位</h2>
-            <p class="section-desc" data-i18n="partners.desc">团队成员来自全球高校与科研机构，横跨北美、欧洲及亚洲。</p>
-        </div>
-        <div class="partners-overview">
-            <article class="partners-story reveal">
-                <span class="partners-story-kicker" data-i18n="partners.panel.kicker">Global Talent Matrix</span>
-                <h3 class="partners-story-title" data-i18n="partners.panel.title">临床问题、实验能力与国际学术训练在同一张协作网络中汇流。</h3>
-                <p class="partners-story-desc" data-i18n="partners.panel.desc">这里展示的不只是校徽，更是一组能够连接医学、材料、影像、生信与转化研究的协作入口，让项目在不同学术背景之间快速切换。</p>
-                <div class="partners-tags">
-                    <span class="partners-tag" data-i18n="partners.tag1">医学</span>
-                    <span class="partners-tag" data-i18n="partners.tag2">影像</span>
-                    <span class="partners-tag" data-i18n="partners.tag3">材料</span>
-                    <span class="partners-tag" data-i18n="partners.tag4">AI 与数据</span>
-                </div>
-            </article>
-            <div class="partners-metrics" id="partners-metrics"></div>
-        </div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-light.webp" alt="奇创纪元 Qichuang Era" width="560" height="234" loading="lazy">
+        <p><strong>北京奇创纪元科技有限公司</strong>Beijing Qichuang Era Technology Co., Ltd</p>
+        <p class="footer-mail"><span data-en="For collaboration: ">合作请联系：</span><a class="link" href="mailto:kangkang@qceratech.cn">kangkang@qceratech.cn</a></p>
+      </div>
+      <nav class="footer-col" aria-label="研究能力" data-en-aria-label="Capabilities">
+        <h4 data-en="Capabilities">研究能力</h4>
+        <a href="platforms/"><span data-en="Platforms">实验平台</span></a>
+        <a href="equipment/"><span data-en="Equipment">仪器设备</span></a>
+        <a href="datasets/"><span data-en="Datasets">核心数据集</span></a>
+        <a href="followup/"><span data-en="Follow-up platform">随访平台</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="合作网络" data-en-aria-label="Network">
+        <h4 data-en="Network">合作网络</h4>
+        <a href="hospitals/"><span data-en="Hospitals">合作医院</span></a>
+        <a href="partners/"><span data-en="Partners">合作单位</span></a>
+        <a href="https://ds-kb-lab.github.io/web-project/" target="_blank" rel="noopener"><span data-en="Dataset platform ↗">数据集详情平台 ↗</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="公司" data-en-aria-label="Company">
+        <h4 data-en="Company">公司</h4>
+        <a href=""><span data-en="Home">首页</span></a>
+        <a href="about/"><span data-en="About">关于我们</span></a>
+        <a href="contact/"><span data-en="Contact">联系我们</span></a>
+      </nav>
     </div>
-    <div class="marquee" id="marquee">
-        <div class="marquee-track" id="marquee-track"></div>
+    <div class="footer-base">
+      <span data-en="© 2026 Beijing Qichuang Era Technology Co., Ltd. All rights reserved.">© 2026 北京奇创纪元科技有限公司 版权所有</span>
+      <span>BEIJING · UTC+8 · <span class="clock" data-clock>--:--:--</span></span>
     </div>
-    <div class="container">
-        <details class="partner-directory">
-            <summary id="partner-directory-summary">查看全部合作单位</summary>
-            <div class="partner-directory-grid" id="partner-directory-grid"></div>
-        </details>
-    </div>
-</section>
-
-<!-- ==================== FOOTER ==================== -->
-<footer class="footer" id="footer">
-    <div class="container footer-inner">
-        <div class="footer-brand">
-            <img class="footer-logo-img" src="company-logo.png" alt="奇创纪元">
-            <div>
-                <strong data-i18n="footer.name">北京奇创纪元科技有限公司</strong>
-                <small data-i18n="footer.nameEn">Beijing Qichuang Era Technology Co., Ltd</small>
-            </div>
-        </div>
-        <p class="footer-contact">
-            <span data-i18n="footer.contact">合作请联系：</span>
-            <a href="mailto:kangkang@qceratech.cn">kangkang@qceratech.cn</a>
-        </p>
-        <div class="footer-links">
-            <a href="#about" data-i18n="nav.about">关于我们</a>
-            <a href="#platforms" data-i18n="nav.platforms">实验平台</a>
-            <a href="#equipment" data-i18n="nav.equipment">仪器设备</a>
-            <a href="#datasets" data-i18n="nav.datasets">核心数据集</a>
-            <a href="#hospitals" data-i18n="nav.hospitals">合作医院</a>
-        </div>
-        <p class="footer-copy" data-i18n="footer.copy">&copy; 2026 北京奇创纪元科技有限公司 版权所有</p>
-    </div>
+  </div>
+  <div class="footer-word" aria-hidden="true">QICHUANG ERA</div>
 </footer>
-
-<script src="app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/fx.js"></script>
 </body>
 </html>
