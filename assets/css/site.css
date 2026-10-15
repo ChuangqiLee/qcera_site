@@ -727,6 +727,19 @@ html[lang=en] .home-hero h1{font-size:clamp(40px,4.5vw,66px)}
 html:not([lang=en]) .gm-name-en{display:none}
 .gm-tagline{margin-top:26px;font-size:clamp(20px,2.2vw,27px);font-weight:550;line-height:1.45;letter-spacing:-.01em;color:var(--ink)}
 .gm-desc{max-width:660px;margin-top:16px;font-size:16px;line-height:1.85;color:var(--ink-2)}
+.gm-charity{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:24px;align-items:center;max-width:660px;margin-top:28px;padding:22px 22px 22px 24px;scroll-margin-top:calc(var(--header-h) + 28px);
+  border:1px solid rgba(var(--orange-rgb),.3);border-radius:18px;
+  background:radial-gradient(120% 150% at 0% 0%,rgba(var(--orange-rgb),.17),transparent 62%),linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+  box-shadow:0 1px 0 0 rgba(255,214,180,.08) inset,0 30px 60px -38px rgba(var(--orange-rgb),.55)}
+.gm-charity-label{display:inline-flex;align-items:center;gap:7px;padding:6px 12px 6px 10px;border:1px solid rgba(var(--orange-rgb),.32);border-radius:999px;background:rgba(var(--orange-rgb),.12);font-size:12.5px;font-weight:550;line-height:1.2;letter-spacing:.02em;color:#ffc9a3}
+.gm-charity-label svg{flex:none;width:14px;height:14px;color:var(--orange);filter:drop-shadow(0 0 6px rgba(var(--orange-rgb),.7))}
+.gm-charity-title{margin-top:14px;font-size:clamp(18px,1.8vw,21px);font-weight:600;line-height:1.4}
+.gm-charity-text{margin-top:10px;font-size:15px;line-height:1.8;color:var(--ink-2)}
+.gm-charity-fund{margin-top:12px;padding-top:12px;border-top:1px solid rgba(var(--orange-rgb),.18);font-size:13.5px;line-height:1.7;color:#ffc9a3}
+.gm-charity-status{margin-top:4px;font-size:12.5px;line-height:1.7;color:var(--muted)}
+.gm-charity-shot{display:block;width:96px;aspect-ratio:390/844;border:1px solid var(--line-2);border-radius:15px;overflow:hidden;background:#2b1d14;transform:rotate(3deg);box-shadow:0 18px 36px -16px rgba(0,0,0,.8);transition:transform .5s var(--ease),border-color .3s}
+.gm-charity-shot img{width:100%;height:100%;object-fit:cover}
+.gm-charity-shot:hover{transform:rotate(0) translateY(-3px);border-color:var(--line-3)}
 .gm-info .chips{margin-top:22px}
 .gm-info .chip::before{background:var(--orange)}
 .gm-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:32px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.008))}
@@ -759,6 +772,7 @@ html:not([lang=en]) .gm-name-en{display:none}
 .gm-shot-cap>span:first-child{flex:none;font:400 10.5px/1.9 var(--mono);letter-spacing:.1em;color:var(--dim)}
 @media (max-width:1000px){.gm-feature{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:44px}.gm-rules{grid-template-columns:1fr}
   .gm-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.gm-fact:nth-child(3){border-left:0}.gm-fact:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:520px){.gm-charity{grid-template-columns:minmax(0,1fr) 64px;gap:14px;padding:18px 16px 18px 18px}.gm-charity-shot{width:64px;border-radius:11px}.gm-charity-text{font-size:14.5px}}
 @media (max-width:760px){.gm-feature{grid-template-columns:1fr;gap:52px}.gm-stage{position:relative;top:auto;--gm-w:272px}.gm-device{padding:9px;border-radius:44px}.gm-screen{border-radius:36px}
   .gm-gallery{margin-top:72px}.gm-arrows{display:none}.gm-shots{grid-auto-columns:42vw;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scroll-padding-inline:var(--gutter)}}
 

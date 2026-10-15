@@ -702,6 +702,7 @@
      Page: games — one section per game: a phone frame that loads the web
      build on demand (full screen on phones), details and screenshots
      ------------------------------------------------------------------ */
+  var HEART_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.5 7.8 3.6 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.5 3.3 4.3 6.6-1.8 4.8-9.3 9.4-9.3 9.4z" fill="currentColor"/></svg>';
   var PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>';
   function renderGames() {
     var box = $('#gm-list');
@@ -719,6 +720,20 @@
           '<span class="gm-shot-img"><img src="' + ROOT + dir + s[0] + '-s.webp" alt="' + esc(s[1]) + '" data-en-alt="' + esc(s[2]) + '" width="390" height="844" loading="lazy" decoding="async"></span>' +
           '<span class="gm-shot-cap"><span>' + pad(j + 1) + '</span>' + t(s[1], s[2]) + '</span></button>';
       }).join('');
+      var c = g.charity, charity = '';
+      if (c) {
+        charity = '<div class="gm-charity" id="' + g.id + '-charity">' +
+          '<div class="gm-charity-copy">' +
+            '<span class="gm-charity-label">' + HEART_ICON + t(c.zh.label, c.en.label) + '</span>' +
+            t(c.zh.title, c.en.title, 'h3', 'gm-charity-title') +
+            t(c.zh.text, c.en.text, 'p', 'gm-charity-text') +
+            t(c.zh.fund, c.en.fund, 'p', 'gm-charity-fund') +
+            t(c.zh.status, c.en.status, 'p', 'gm-charity-status') +
+          '</div>' +
+          '<button class="gm-charity-shot" type="button" data-i="' + c.shot + '" aria-label="查看游戏里的爱心粮仓" data-en-aria-label="See the Cat Food Bank in the game">' +
+            '<img src="' + ROOT + dir + g.shots[c.shot][0] + '-s.webp" alt="" width="390" height="844" loading="lazy" decoding="async"></button>' +
+        '</div>';
+      }
       var play = ROOT + g.play;
       return '<section class="section gm-section" id="' + g.id + '" data-game="' + i + '"><div class="wrap">' +
         '<div class="gm-feature">' +
@@ -738,6 +753,7 @@
             '<h2 class="gm-title"><img class="gm-logo" src="' + ROOT + esc(g.logo) + '" alt="' + esc(z.name) + '" data-en-alt="' + esc(en.name + ' (' + z.name + ')') + '" width="960" height="340" decoding="async"><span class="gm-name-en">' + esc(en.name) + '</span></h2>' +
             t(z.tagline, en.tagline, 'p', 'gm-tagline') +
             t(z.desc, en.desc, 'p', 'gm-desc') +
+            charity +
             '<div class="chips">' + chips + '</div>' +
             '<div class="gm-facts">' + facts + '</div>' +
             '<div class="gm-block">' + t('怎么玩', 'How to play', 'h3') + '<ol class="gm-rules">' + rules + '</ol></div>' +
@@ -790,7 +806,7 @@
         }
         var arrow = e.target.closest('[data-scroll]');
         if (arrow) { strip.scrollBy({ left: +arrow.getAttribute('data-scroll') * strip.clientWidth * 0.8, behavior: reduced ? 'auto' : 'smooth' }); return; }
-        var shot = e.target.closest('.gm-shot');
+        var shot = e.target.closest('.gm-shot, .gm-charity-shot');
         if (shot) lightbox(g.shots.map(function (s) { return { img: dir + s[0] + '.webp', caption: L(s[1], s[2]) }; }), +shot.getAttribute('data-i'));
       });
     });
