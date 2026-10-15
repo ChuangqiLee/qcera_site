@@ -1,6 +1,6 @@
 # 奇创纪元官网
 
-北京奇创纪元科技有限公司官网，纯静态页面，通过 GitHub Pages 从 `main` 分支根目录发布：https://ds-kb-lab.github.io/qcera_web/ 。合并到 `main` 后会自动部署，结果以仓库 Actions 里的 `pages build and deployment` 为准。
+北京奇创纪元科技有限公司官网，纯静态页面，通过 GitHub Pages 从 `main` 分支根目录发布：https://knewlabs.ai/ 。域名由根目录的 `CNAME` 文件指定（不要删），DNS 在 GoDaddy：`@` 的 4 条 A 记录指向 GitHub Pages（185.199.108–111.153），`www` 的 CNAME 指向 `ds-kb-lab.github.io`。旧地址 https://ds-kb-lab.github.io/qcera_web/ 会自动跳到新域名。合并到 `main` 后会自动部署，结果以仓库 Actions 里的 `pages build and deployment` 为准。
 
 ## 页面
 
@@ -18,6 +18,7 @@
 | `/partners/` | 合作高校与研究机构 |
 | `/contact/` | 联系我们 |
 | `/games/` | 游戏分布：公司出品的游戏，可在网页上直接试玩 |
+| `/game/` | 跳转到 `/games/` |
 
 旧地址里的 `#about`、`#hospitals` 等锚点会自动跳到对应的新页面。
 
