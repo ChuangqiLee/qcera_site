@@ -1,6 +1,6 @@
 /* 奇创纪元 Qichuang Era — site behaviour
    Language switching, header, scroll reveals, and the data-driven sections of
-   each page (platforms, equipment, datasets, hospital map, partners).
+   each page (platforms, equipment, datasets, hospital map, partners, games).
    Content lives in data.js; visual effects live in fx.js. */
 (function () {
   'use strict';
@@ -48,7 +48,8 @@
     platforms: (Q.platforms || []).length,
     equipment: (Q.equipment || []).filter(function (e) { return !e.data; }).length,
     modules: (Q.platforms || []).reduce(function (n, p) { return n + p.zh.tags.length; }, 0),
-    regions: Object.keys((Q.regions || {})).filter(function (k) { return k !== 'overseas'; }).length
+    regions: Object.keys((Q.regions || {})).filter(function (k) { return k !== 'overseas'; }).length,
+    games: (Q.games || []).length
   };
   function fillStats() {
     $$('[data-stat]').forEach(function (el) {
@@ -698,6 +699,104 @@
   }
 
   /* ------------------------------------------------------------------
+     Page: games — one section per game: a phone frame that loads the web
+     build on demand (full screen on phones), details and screenshots
+     ------------------------------------------------------------------ */
+  var PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>';
+  function renderGames() {
+    var box = $('#gm-list');
+    if (!box || !Q.games) return;
+    box.innerHTML = Q.games.map(function (g, i) {
+      var z = g.zh, en = g.en, dir = g.logo.replace(/[^/]+$/, '');
+      var chips = z.genres.map(function (s, j) { return t(s, en.genres[j], 'span', 'chip'); }).join('');
+      var facts = g.facts.map(function (f) {
+        return '<div class="gm-fact"><strong>' + esc(f[0]) + '</strong>' + t(f[1], f[2]) + '</div>';
+      }).join('');
+      var rules = z.rules.map(function (s, j) { return '<li><span>' + pad(j + 1) + '</span>' + t(s, en.rules[j]) + '</li>'; }).join('');
+      var feats = z.features.map(function (s, j) { return t(s, en.features[j], 'li'); }).join('');
+      var shots = g.shots.map(function (s, j) {
+        return '<button class="gm-shot" type="button" data-i="' + j + '">' +
+          '<span class="gm-shot-img"><img src="' + ROOT + dir + s[0] + '-s.webp" alt="' + esc(s[1]) + '" data-en-alt="' + esc(s[2]) + '" width="390" height="844" loading="lazy" decoding="async"></span>' +
+          '<span class="gm-shot-cap"><span>' + pad(j + 1) + '</span>' + t(s[1], s[2]) + '</span></button>';
+      }).join('');
+      var play = ROOT + g.play;
+      return '<section class="section gm-section" id="' + g.id + '" data-game="' + i + '"><div class="wrap">' +
+        '<div class="gm-feature">' +
+          '<div class="gm-stage">' +
+            '<div class="gm-device reveal"><div class="gm-screen">' +
+              '<img class="gm-poster" src="' + ROOT + esc(g.poster) + '" alt="" width="390" height="844" decoding="async">' +
+              '<button class="gm-play" type="button" data-play aria-label="开始试玩《' + esc(z.name) + '》" data-en-aria-label="Play ' + esc(en.name) + '">' +
+                '<span class="gm-play-icon">' + PLAY_ICON + '</span>' + t('点击开始试玩', 'Tap to play', 'span', 'gm-play-label') + '</button>' +
+              '<span class="gm-loading" aria-hidden="true"><i></i>' + t('游戏加载中', 'Loading the game') + '</span>' +
+            '</div></div>' +
+            '<div class="gm-device-bar"><span class="gm-bar-label"><span class="live"></span>WEB · ' + esc(g.id.toUpperCase()) + '</span>' +
+              '<span class="gm-tools"><button class="gm-tool" type="button" data-reload hidden>' + t('↻ 重新载入', '↻ Reload') + '</button>' +
+              '<a class="gm-tool" href="' + play + '" target="_blank" rel="noopener">' + t('全屏打开 ↗', 'Full screen ↗') + '</a></span></div>' +
+          '</div>' +
+          '<div class="gm-info">' +
+            '<span class="eyebrow">GAME ' + pad(i + 1) + ' · ' + t(z.kind, en.kind) + '</span>' +
+            '<h2 class="gm-title"><img class="gm-logo" src="' + ROOT + esc(g.logo) + '" alt="' + esc(z.name) + '" data-en-alt="' + esc(en.name + ' (' + z.name + ')') + '" width="960" height="340" decoding="async"><span class="gm-name-en">' + esc(en.name) + '</span></h2>' +
+            t(z.tagline, en.tagline, 'p', 'gm-tagline') +
+            t(z.desc, en.desc, 'p', 'gm-desc') +
+            '<div class="chips">' + chips + '</div>' +
+            '<div class="gm-facts">' + facts + '</div>' +
+            '<div class="gm-block">' + t('怎么玩', 'How to play', 'h3') + '<ol class="gm-rules">' + rules + '</ol></div>' +
+            '<div class="gm-block">' + t('游戏内容', 'What’s inside', 'h3') + '<ul class="gm-features">' + feats + '</ul></div>' +
+            '<div class="actions"><button class="btn btn-primary" type="button" data-play>' + t('开始试玩', 'Play now') + '<span class="arr" aria-hidden="true">▶</span></button>' +
+              '<a class="btn" href="' + play + '" target="_blank" rel="noopener">' + t('全屏打开', 'Open full screen') + '<span class="arr out" aria-hidden="true">↗</span></a></div>' +
+            t(z.platform, en.platform, 'p', 'gm-platform') +
+            t(z.note, en.note, 'p', 'gm-note') +
+          '</div>' +
+        '</div>' +
+        '<div class="gm-gallery">' +
+          '<div class="gm-gallery-head"><span class="eyebrow">' + t('游戏画面', 'Screenshots') + '</span>' +
+            '<span class="gm-arrows"><button class="lb-btn" type="button" data-scroll="-1" aria-label="向前" data-en-aria-label="Scroll back">←</button>' +
+            '<button class="lb-btn" type="button" data-scroll="1" aria-label="向后" data-en-aria-label="Scroll forward">→</button></span></div>' +
+          '<div class="gm-shots">' + shots + '</div>' +
+        '</div>' +
+      '</div></section>';
+    }).join('');
+
+    var small = window.matchMedia('(max-width: 760px), (pointer: coarse)');
+    function start(sec, g) {
+      var url = ROOT + g.play;
+      if (small.matches) { location.href = url; return; }
+      var screen = $('.gm-screen', sec);
+      var frame = $('iframe', screen);
+      var device = $('.gm-device', sec);
+      var r = device.getBoundingClientRect();
+      if (r.top < 0 || r.bottom > window.innerHeight) device.scrollIntoView({ block: 'center', behavior: reduced ? 'auto' : 'smooth' });
+      if (frame) { frame.focus(); return; }
+      frame = document.createElement('iframe');
+      frame.className = 'gm-frame';
+      frame.title = L(g.zh.name, g.en.name);
+      frame.setAttribute('allow', 'autoplay; fullscreen');
+      frame.addEventListener('load', function () { screen.classList.add('is-loaded'); frame.focus(); });
+      frame.src = url;
+      screen.appendChild(frame);
+      screen.classList.add('is-playing');
+      $('[data-reload]', sec).hidden = false;
+    }
+    $$('.gm-section', box).forEach(function (sec) {
+      var g = Q.games[+sec.getAttribute('data-game')];
+      var dir = g.logo.replace(/[^/]+$/, '');
+      var strip = $('.gm-shots', sec);
+      sec.addEventListener('click', function (e) {
+        if (e.target.closest('[data-play]')) { start(sec, g); return; }
+        if (e.target.closest('[data-reload]')) {
+          var frame = $('.gm-screen iframe', sec);
+          if (frame) { $('.gm-screen', sec).classList.remove('is-loaded'); frame.src = ROOT + g.play; }
+          return;
+        }
+        var arrow = e.target.closest('[data-scroll]');
+        if (arrow) { strip.scrollBy({ left: +arrow.getAttribute('data-scroll') * strip.clientWidth * 0.8, behavior: reduced ? 'auto' : 'smooth' }); return; }
+        var shot = e.target.closest('.gm-shot');
+        if (shot) lightbox(g.shots.map(function (s) { return { img: dir + s[0] + '.webp', caption: L(s[1], s[2]) }; }), +shot.getAttribute('data-i'));
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------
      Page: contact — copy the e-mail address
      ------------------------------------------------------------------ */
   function setupCopy() {
@@ -732,6 +831,7 @@
   if (page === 'datasets') renderDatasets();
   if (page === 'hospitals') renderHospitals();
   if (page === 'partners') renderPartners();
+  if (page === 'games') renderGames();
   setupCopy();
   var saved = 'zh';
   try { saved = localStorage.getItem('qcera-lang') || 'zh'; } catch (e) { /* private mode */ }

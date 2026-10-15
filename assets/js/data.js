@@ -117,6 +117,48 @@ window.QCERA = {
   ],
   datasetPlatform: "https://ds-kb-lab.github.io/web-project/",
 
+  /* 游戏分布页（/games/）：每个游戏一条，按顺序展示。
+     play 是网页版所在文件夹（整个网页版导出放进去即可，正式版设置见 README）；
+     facts 为 [数值, 中文说明, 英文说明]；shots 为游戏截图（竖屏，-s 结尾的是缩略图）。 */
+  games: [
+    {
+      id: "miaomiao", play: "games/miaomiao/", logo: "assets/img/games/miaomiao/logo.webp",
+      poster: "assets/img/games/miaomiao/shot-08-s.webp",
+      facts: [["30", "个关卡", "Levels"], ["11", "项猫咖装修，每项 3 款", "Café upgrades, 3 styles each"], ["2", "只店猫：大橘、狸花", "Shop cats: Daju & Lihua"], ["7", "个收纳格", "Tray slots"]],
+      shots: [
+        ["shot-01", "第 1 关", "Level 1"],
+        ["shot-02", "第 1 关结尾：大橘登场", "End of level 1: Daju appears"],
+        ["shot-03", "第 3 关：大橘来捣乱", "Level 3: Daju makes mischief"],
+        ["shot-04", "大橘成为店猫", "Daju becomes the shop cat"],
+        ["shot-06", "一开始的杂物铺", "The junk shop at the start"],
+        ["shot-07", "装修：换一个款式", "Decorating: pick a style"],
+        ["shot-08", "装修好的猫咖", "The finished cat café"],
+        ["shot-09", "猫咖夜景", "The café at night"],
+        ["shot-10", "我的猫", "My cats"],
+        ["shot-05", "第 26 关：冰封卡片", "Level 26: frozen tiles"],
+        ["shot-11", "第 20 关：地狱关", "Level 20: the hardest tier"]
+      ],
+      zh: {
+        name: "喵喵收纳馆", kind: "休闲益智 · 三消收纳", tagline: "收拾奶奶的老杂物铺，把它开成一家猫咖",
+        desc: "玩家继承了奶奶的老杂物铺，店里堆满几十年的旧东西，还住着一只赖着不走的橘猫“大橘”。每过一关，就是收拾店里的一个角落；收拾出来的地方装修成猫咖；搬进来的猫，又会到关卡里帮忙。",
+        genres: ["三消收纳", "猫咖经营", "养猫", "剧情"],
+        rules: ["点一张卡片，它会进到下面的收纳格。", "收纳格里凑齐 3 张一样的物品，这 3 张立刻消除。", "7 个收纳格全部放满、又没有发生消除，就算失败。"],
+        features: ["关卡里逐步加入冰封卡片、隐藏物品和大橘捣乱", "移出、撤回、洗牌三种道具，洗牌后保证仍然有解", "猫咖 11 个装修项目，营业收入、离线收入和特别订单", "撸猫、喂猫、亲密度，店猫还会带着技能到关卡里帮忙", "第 10 关后开放每日挑战"],
+        platform: "网页版：手机、电脑浏览器打开就能玩，无需下载。抖音小游戏版筹备中。",
+        note: "游戏为简体中文；进度保存在当前浏览器里，换设备或清除浏览器数据后会从头开始。"
+      },
+      en: {
+        name: "Miaomiao Shounaguan", kind: "Casual puzzle · tile matching", tagline: "Tidy up Grandma's old junk shop and turn it into a cat café",
+        desc: "You inherit Grandma's old junk shop, piled high with decades of clutter and home to Daju, a ginger cat who refuses to leave. Every level clears another corner of the shop; every cleared corner becomes part of a cat café; and the cats who move in come back to help you in the levels.",
+        genres: ["Tile matching", "Café management", "Cat care", "Story"],
+        rules: ["Tap a tile and it drops into the tray below.", "Collect 3 identical items in the tray and they clear at once.", "If all 7 tray slots fill up without a match, the level is lost."],
+        features: ["New mechanics arrive level by level: frozen tiles, hidden items and Daju's mischief", "Three tools — remove, undo and shuffle; a shuffle always leaves the level solvable", "11 café upgrades, with shop income, offline earnings and special orders", "Pet and feed your cats to build affection; each cat brings a skill into the levels", "A daily challenge unlocks after level 10"],
+        platform: "Web version: plays in any phone or desktop browser, no download needed. A Douyin mini-game version is in preparation.",
+        note: "The game is in Simplified Chinese. Progress is saved in this browser and starts over on another device or after clearing browser data."
+      }
+    }
+  ],
+
   /* 合作医院所在区域 */
   regions: {
     north: ["华北", "North China"],

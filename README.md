@@ -17,6 +17,7 @@
 | `/hospitals/` | 合作医院地图与名单 |
 | `/partners/` | 合作高校与研究机构 |
 | `/contact/` | 联系我们 |
+| `/games/` | 游戏分布：公司出品的游戏，可在网页上直接试玩 |
 
 旧地址里的 `#about`、`#hospitals` 等锚点会自动跳到对应的新页面。
 
@@ -27,6 +28,13 @@
 - 新增合作单位：把 logo 放进 `university_logos/`，再在 `data.js` 的 `universities` 里加一行。`assets/img/logos/` 里的同名 `.webp` 是压缩版，可以不加，缺少时会自动使用原图。
 - 新增合作医院：在 `data.js` 的 `cities` 里找到对应城市，把 `[中文名, 英文名]` 加进 `institutions`。新城市需要填写经纬度 `lng` / `lat`。
 
+## 游戏
+
+- 游戏列表在 `data.js` 的 `games` 里，每个游戏一项：介绍文字、数字亮点、截图和试玩地址 `play`。加一项就会多一个游戏板块，首页上的游戏数量也会跟着变。
+- 游戏本体放在 `games/<游戏名>/`，是 Cocos Creator 导出的 web-mobile 版本，打开这个目录的 `index.html` 就能玩。截图和标题图放在 `assets/img/games/<游戏名>/`。
+- 更新《喵喵收纳馆》：用 one game 项目的正式版导出（`RELEASE=1`，爱心粮仓显示筹备中，猫友簿和金爪杯关闭）整个替换 `games/miaomiao/`，不要只替换部分文件。
+- 电脑上点「开始试玩」会在页面里的手机框中打开游戏；手机上会直接进入全屏游戏页。
+
 ## 目录
 
 ```
@@ -35,8 +43,9 @@ assets/js/data.js      全部内容数据
 assets/js/site.js      页面渲染、中英切换、地图
 assets/js/fx.js        动效（光标、粒子、标题动画、首页双螺旋）
 assets/fonts/          Geist 字体（本地托管，国内可正常访问）
-assets/img/            站点 logo、分享图、合作单位 logo 压缩版
+assets/img/            站点 logo、分享图、合作单位 logo 压缩版、游戏截图
 assets/data/cn.svg     地图底图
+games/                 游戏网页版（每个游戏一个目录）
 pdf_images/            宣传册图片
 university_logos/      合作单位 logo 原图
 ```
