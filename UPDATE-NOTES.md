@@ -1,6 +1,6 @@
 # 医院与合作单位更新记录
 
-更新日期：2026-10-02。官网通过 GitHub Pages 发布，发布分支为 `main`，地址为 https://knewlabs.ai/ （2026-10-15 起；旧地址 https://ds-kb-lab.github.io/qcera_web/ 自动跳转）。部署结果以仓库的 `pages build and deployment` 运行记录为准。
+更新日期：2026-10-02。官网通过 GitHub Pages 发布，发布分支为 `main`，地址为 https://ds-kb-lab.github.io/qcera_web/ 。部署结果以仓库的 `pages build and deployment` 运行记录为准。
 
 ## 更新范围
 
