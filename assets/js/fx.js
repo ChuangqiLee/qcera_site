@@ -153,7 +153,8 @@
       else if (lockEl.matches('a[target=_blank]')) verb = '↗ EXTERNAL';
       else if (lockEl.matches('a')) verb = '→ OPEN';
       else if (lockEl.matches('.node,[data-city]')) verb = '◎ LOCATE';
-      else if (lockEl.matches('.eq-card,[data-pf]')) verb = '⤢ ZOOM';
+      else if (lockEl.matches('[data-play]')) verb = '▶ PLAY';
+      else if (lockEl.matches('.eq-card,.gm-shot,[data-pf]')) verb = '⤢ ZOOM';
       else verb = '◆ ACTION';
     }
     var text = (verb ? '<em>' + verb + '</em><br>' : '') + 'X ' + p4(mouse.x) + '  Y ' + p4(mouse.y);
@@ -184,7 +185,10 @@
     if (tg !== lockEl) { lockEl = tg; ring.classList.toggle('is-lock', !!tg); }
     kick();
   }, { passive: true });
-  root.addEventListener('pointerleave', function () { mouse.active = false; lockEl = null; trail.length = 0; syncCursor(); dirty = true; kick(); });
+  function cursorAway() { mouse.active = false; lockEl = null; ring.classList.remove('is-lock'); trail.length = 0; syncCursor(); dirty = true; kick(); }
+  root.addEventListener('pointerleave', cursorAway);
+  // moving into an embedded frame (the game player) leaves this document too
+  addEventListener('pointerout', function (e) { if (!e.relatedTarget && e.pointerType !== 'touch') cursorAway(); }, { passive: true });
   addEventListener('blur', function () { mouse.active = false; syncCursor(); });
   addEventListener('pointerdown', function (e) {
     ring.classList.add('is-down');
