@@ -17,6 +17,7 @@
 <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
 <script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('qcera-lang');if(l==='en')document.documentElement.lang='en'}catch(e){}</script>
+<script>try{if(!sessionStorage.getItem('qc-intro')&&!location.hash&&!matchMedia('(prefers-reduced-motion: reduce)').matches){sessionStorage.setItem('qc-intro','1');document.documentElement.classList.add('qc-intro-on');self.qcIntroAt=performance.now()}}catch(e){}</script>
 <script>(function(){var m={about:'about/',platforms:'platforms/',equipment:'equipment/',datasets:'datasets/',hospitals:'hospitals/',partners:'partners/',footer:'contact/'};var h=location.hash.slice(1);if(m[h])location.replace(m[h]+location.search)})()</script>
 </head>
 <body data-page="home">
@@ -262,5 +263,6 @@
 <script src="assets/js/data.js"></script>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/fx.js"></script>
+<script src="assets/js/brand.js"></script>
 </body>
 </html>
