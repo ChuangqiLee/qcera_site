@@ -1,0 +1,44 @@
+# 奇创纪元官网
+
+北京奇创纪元科技有限公司官网，纯静态页面，通过 GitHub Pages 从 `main` 分支根目录发布：https://ds-kb-lab.github.io/qcera_web/ 。合并到 `main` 后会自动部署，结果以仓库 Actions 里的 `pages build and deployment` 为准。
+
+## 页面
+
+每个板块是一个独立网址：
+
+| 网址 | 内容 |
+| --- | --- |
+| `/` | 首页：总览与各板块入口 |
+| `/about/` | 关于我们：团队、服务模式、研究路径、科研合规 |
+| `/platforms/` | 五大实验技术服务平台 |
+| `/equipment/` | 核心仪器设备 |
+| `/datasets/` | 核心医疗数据集 |
+| `/followup/` | 患者随访管理系统（规划总览图仍是根目录的 `follow-up.html`） |
+| `/hospitals/` | 合作医院地图与名单 |
+| `/partners/` | 合作高校与研究机构 |
+| `/contact/` | 联系我们 |
+
+旧地址里的 `#about`、`#hospitals` 等锚点会自动跳到对应的新页面。
+
+## 改内容
+
+- 平台、仪器、数据集、合作医院和合作单位都在 `assets/js/data.js`，改这一个文件即可，各页面的数量统计会自动更新。
+- 每条内容都有中文 `zh` 和英文 `en` 两份，请同步修改。页面上的固定文字在各页面 `index.html` 里，英文写在同一元素的 `data-en` 属性中。
+- 新增合作单位：把 logo 放进 `university_logos/`，再在 `data.js` 的 `universities` 里加一行。`assets/img/logos/` 里的同名 `.webp` 是压缩版，可以不加，缺少时会自动使用原图。
+- 新增合作医院：在 `data.js` 的 `cities` 里找到对应城市，把 `[中文名, 英文名]` 加进 `institutions`。新城市需要填写经纬度 `lng` / `lat`。
+
+## 目录
+
+```
+assets/css/site.css    全站样式
+assets/js/data.js      全部内容数据
+assets/js/site.js      页面渲染、中英切换、地图
+assets/js/fx.js        动效（光标、粒子、标题动画、首页双螺旋）
+assets/fonts/          Geist 字体（本地托管，国内可正常访问）
+assets/img/            站点 logo、分享图、合作单位 logo 压缩版
+assets/data/cn.svg     地图底图
+pdf_images/            宣传册图片
+university_logos/      合作单位 logo 原图
+```
+
+本地预览：在仓库上一级目录运行 `python3 -m http.server`，再打开 http://localhost:8000/qcera_web/ 。

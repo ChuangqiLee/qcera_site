@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-en="Follow-up platform | Qichuang Era">随访平台 | 奇创纪元</title>
+<meta name="description" content="患者随访管理系统产品规划：7 个使用入口、65 个页面、10 类外部系统、118 条跳转与数据关系，可按地区、医院、科室开通功能。" data-en-content="Patient follow-up management system plan: 7 entry points, 65 pages, 10 external system types and 118 links, configurable by region, hospital and department.">
+<meta name="theme-color" content="#05060a">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="奇创纪元 Qichuang Era">
+<meta property="og:title" content="随访平台 | 奇创纪元">
+<meta property="og:description" content="患者随访管理系统产品规划：7 个使用入口、65 个页面、10 类外部系统、118 条跳转与数据关系，可按地区、医院、科室开通功能。">
+<meta property="og:image" content="https://ds-kb-lab.github.io/qcera_web/assets/img/og.png">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('qcera-lang');if(l==='en')document.documentElement.lang='en'}catch(e){}</script>
+</head>
+<body data-page="followup">
+<a class="skip" href="#main" data-en="Skip to content">跳到正文</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../" aria-label="奇创纪元 首页" data-en-aria-label="Qichuang Era home"><img src="../assets/img/logo-light.webp" alt="奇创纪元 Qichuang Era" width="560" height="234"></a>
+    <nav class="nav" id="site-nav" aria-label="主导航" data-en-aria-label="Main">
+      <a href="../about/"><span class="nav-index">01</span><span data-en="About">关于我们</span></a>
+      <a href="../platforms/"><span class="nav-index">02</span><span data-en="Platforms">实验平台</span></a>
+      <a href="../equipment/"><span class="nav-index">03</span><span data-en="Equipment">仪器设备</span></a>
+      <a href="../datasets/"><span class="nav-index">04</span><span data-en="Datasets">数据集</span></a>
+      <a href="../followup/" aria-current="page"><span class="nav-index">05</span><span data-en="Follow-up">随访平台</span></a>
+      <a href="../hospitals/"><span class="nav-index">06</span><span data-en="Hospitals">合作医院</span></a>
+      <a href="../partners/"><span class="nav-index">07</span><span data-en="Partners">合作单位</span></a>
+      <a href="../contact/"><span class="nav-index">08</span><span data-en="Contact">联系我们</span></a>
+    </nav>
+    <div class="header-tools">
+      <button class="lang" id="lang-toggle" type="button" aria-label="Switch to English"><span class="lang-zh">中</span><span class="lang-sep">/</span><span class="lang-en">EN</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="菜单" data-en-aria-label="Menu"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="page-hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="crumbs"><a href="../">QCERA</a><span class="sep"></span><span>05 / 08</span><span class="sep"></span><span class="here">FOLLOW-UP</span></p>
+    <span class="plan-badge"><span data-en="Product plan · October 2026">产品规划 · 2026 年 10 月版</span></span>
+    <h1><span data-en="Patient follow-up ">患者随访</span><em data-en="management system">管理系统</em></h1>
+    <p class="lead" data-en="Post-discharge follow-up and whole-course disease management for hospitals in China. One map shows every page, what it does and how pages connect; on first use, functions are switched on by region, hospital and department, starting from the configuration most used by similar departments nearby.">面向中国医院的诊后随访与全病程管理。一张图看清系统有哪些页面、每个页面做什么、页面之间怎样跳转；首次使用时按地区、医院、科室逐级选择并勾选功能，默认采用当地同类医院同科室最常用的配置模板。</p>
+    <div class="actions"><a class="btn btn-primary" href="../follow-up.html"><span data-en="Open the interactive plan">打开规划总览图</span><span class="arr out" aria-hidden="true">↗</span></a>
+      <a class="btn" href="../患者随访管理系统功能规划报告.pdf" target="_blank" rel="noopener"><span data-en="Planning report (PDF)">功能规划报告 PDF</span><span class="arr out" aria-hidden="true">↗</span></a></div>
+    <div class="stats reveal" style="--n:6"><div class="stat"><span class="stat-index">01</span><span class="stat-value"><span data-count="65">65</span></span><span class="stat-label" data-en="Pages">个页面</span></div><div class="stat"><span class="stat-index">02</span><span class="stat-value"><span data-count="7">7</span></span><span class="stat-label" data-en="Entry points">个使用入口</span></div><div class="stat"><span class="stat-index">03</span><span class="stat-value"><span data-count="118">118</span></span><span class="stat-label" data-en="Links &amp; data flows">条跳转与数据关系</span></div><div class="stat"><span class="stat-index">04</span><span class="stat-value"><span data-count="10">10</span></span><span class="stat-label" data-en="External system types">类外部系统</span></div><div class="stat"><span class="stat-index">05</span><span class="stat-value"><span data-count="17">17</span></span><span class="stat-label" data-en="Selectable modules">个可勾选功能模块</span></div><div class="stat"><span class="stat-index">06</span><span class="stat-value"><span data-count="18">18</span></span><span class="stat-label" data-en="Department templates">套科室模板</span></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-en="Entry Points">Entry Points</span>
+        <h2><span data-en="Seven entry points, ">七个使用入口，</span><em data-en="one shared application">一套业务应用</em></h2></div>
+      <p class="reveal" data-en="Seven entry points share one application and capability layer, integrated with ten types of existing hospital systems.">七个使用入口共用一套业务应用和能力中台，并与医院已有的十类外部系统集成。</p>
+    </div>
+    <div class="fu-entries"><div class="card fu-entry reveal"><span class="code">W</span><h3 data-en="Onboarding &amp; setup">开通与初始化</h3><p class="via" data-en="First-use wizard">首次使用向导</p><p class="who" data-en="Hospital admins · department heads · first-time clinicians">医院管理员 · 科室主任 · 首次登录的医护</p></div><div class="card fu-entry reveal"><span class="code">P</span><h3 data-en="Clinician workstation">医护工作站</h3><p class="via" data-en="Desktop">PC 端</p><p class="who" data-en="Doctors · nurses · follow-up staff · researchers">医生 · 护士 · 随访专员 · 科研人员</p></div><div class="card fu-entry reveal"><span class="code">D</span><h3 data-en="Patient app">患者端</h3><p class="via" data-en="WeChat account / mini-program / SMS H5 / smart calls">公众号 / 小程序 / 短信 H5 / 智能电话</p><p class="who" data-en="Patients · families">患者 · 家属</p></div><div class="card fu-entry reveal"><span class="code">C</span><h3 data-en="Clinician mobile">医生移动端</h3><p class="via" data-en="WeCom / DingTalk / hospital app">企业微信 / 钉钉 / 院内 APP</p><p class="who" data-en="Doctors · nurses">医生 · 护士</p></div><div class="card fu-entry reveal"><span class="code">G</span><h3 data-en="Platform operations">平台运营端</h3><p class="via" data-en="Vendor cloud, stores no patient data">软件公司云端，不存患者数据</p><p class="who" data-en="Implementation &amp; operations · clinical experts">实施与运营团队 · 临床专家</p></div><div class="card fu-entry reveal"><span class="code">F</span><h3 data-en="Hospital admin console">医院管理后台</h3><p class="via" data-en="IT department · medical affairs">信息科 · 医务处</p><p class="who" data-en="System administrators">系统管理员</p></div><div class="card fu-entry reveal"><span class="code">M</span><h3 data-en="Management cockpit">管理驾驶舱</h3><p class="via" data-en="Desktop · wall display">PC · 大屏</p><p class="who" data-en="Hospital leadership · functional departments · department heads">院领导 · 职能部门 · 科室主任</p></div><div class="card fu-entry note reveal"><span class="code">X</span><h3 data-en="External systems">外部系统与集成</h3><p data-en="10 categories: HIS, EMR, LIS / PACS / pathology, integration platform / EMPI, internet hospital, messaging, voice and LLM services, regional platforms, quality and registry reporting, and more.">HIS、EMR、LIS / PACS / 病理、集成平台 / EMPI、互联网医院、通信渠道、语音与大模型服务、区域平台 / 医联体、质控与登记上报等 10 类。</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-en="Configuration">Configuration</span>
+        <h2><span data-en="Four configuration levels, ">四级配置，</span><em data-en="each inheriting the last">逐级继承</em></h2></div>
+      <p class="reveal" data-en="Regions, hospitals and departments need different things. Every function is a selectable module; anything left unticked never appears on the home page or menus.">各地区、各医院、各科室对随访的要求不同。系统的功能全部做成可勾选的模块，没有勾选的功能不会出现在首页和菜单。</p>
+    </div>
+    <div class="fu-levels"><div class="fu-level head"><span><span data-en="Level">层级</span></span><span><span data-en="Configured by">谁来配置</span></span><span><span data-en="What is configured">配置什么</span></span><span><span data-en="Rule">规则</span></span></div><div class="fu-level reveal"><span class="lv"><i>L1</i><span data-en="Region">地区</span></span><p class="who" data-k="谁来配置" data-en="Platform operator">平台运营方</p><p data-k="配置什么" data-en="Regional platform links, dialects and minority languages, local disease programs and assessment criteria">区域平台对接、方言与民族语言、地方病种方案、地方考核口径</p><p data-k="规则" data-en="Becomes the default for hospitals in the region">作为本地区医院的默认值</p></div><div class="fu-level reveal"><span class="lv"><i>L2</i><span data-en="Hospital">医院</span></span><p class="who" data-k="谁来配置" data-en="Hospital admins (IT, medical affairs)">医院管理员（信息科、医务处）</p><p data-k="配置什么" data-en="The hospital function pool, channels and interfaces, hospital-wide satisfaction and quality plans">本院功能池、渠道与接口、全院满意度与质控方案</p><p data-k="规则" data-en="Departments choose only within this pool">科室只能在功能池内勾选</p></div><div class="fu-level reveal"><span class="lv"><i>L3</i><span data-en="Department">科室</span></span><p class="who" data-k="谁来配置" data-en="Department heads, head nurses">科室主任、护士长</p><p data-k="配置什么" data-en="Department functions, follow-up plans, scales, patient education, alert thresholds">科室功能、随访方案、量表、宣教、预警阈值</p><p data-k="规则" data-en="Uses the recommended template by default">默认套用推荐模板</p></div><div class="fu-level reveal"><span class="lv"><i>L4</i><span data-en="Individual">个人</span></span><p class="who" data-k="谁来配置" data-en="Doctors, nurses">医生、护士</p><p data-k="配置什么" data-en="Home-card order and visibility, reminder channels">首页卡片顺序与显隐、提醒方式</p><p data-k="规则" data-en="Adjustable only within what the department enabled">只能在科室已开通范围内调整</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap fu-loop">
+    <div class="loop-diagram reveal"><svg viewBox="0 0 400 400" aria-hidden="true">
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ea8ff"/><stop offset=".55" stop-color="#a58cff"/><stop offset="1" stop-color="#ff7a3d"/></linearGradient>
+      <radialGradient id="lglow"><stop offset="0" stop-color="#6ea8ff" stop-opacity=".25"/><stop offset="1" stop-color="#6ea8ff" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="200" cy="200" r="190" fill="url(#lglow)"/>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.08)"/>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="url(#lg)" stroke-width="1.6" stroke-dasharray="4 10" class="loop-spin"/>
+      <circle cx="200" cy="200" r="104" fill="none" stroke="rgba(255,255,255,.06)" stroke-dasharray="2 6"/>
+      <g font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#98a0ad" text-anchor="middle">
+        <circle cx="200" cy="50" r="22" fill="#05060a" stroke="#5eead4"/><text x="200" y="54" fill="#5eead4">OK</text>
+        <circle cx="350" cy="200" r="22" fill="#05060a" stroke="#ff7a3d"/><text x="350" y="204" fill="#ff7a3d">!</text>
+        <circle cx="200" cy="350" r="22" fill="#05060a" stroke="#a58cff"/><text x="200" y="354" fill="#a58cff">?</text>
+        <circle cx="50" cy="200" r="22" fill="#05060a" stroke="#6ea8ff"/><text x="50" y="204" fill="#6ea8ff">↻</text>
+        <text x="200" y="192" font-size="12" fill="#f3f5f8">FOLLOW-UP</text><text x="200" y="212">CLOSED LOOP</text>
+      </g>
+      <circle r="5" fill="#fff" class="loop-dot"><animateMotion dur="9s" repeatCount="indefinite" path="M200 50a150 150 0 1 1-.1 0"/></circle>
+    </svg></div>
+    <div>
+      <span class="eyebrow" data-en="Closed Loop">Closed Loop</span>
+      <h2 style="margin:18px 0 18px;font-size:clamp(30px,3.8vw,48px)"><span data-en="Only alerts and non-responses ">只有异常和未响应</span><em data-en="need a person">才需要人工</em></h2>
+      <p style="margin-bottom:26px" data-en="Patients enrol at discharge and are contacted automatically when due; every result feeds quality and satisfaction analysis, which in turn refines plans and templates.">出院即入组，到期自动推送；全部结果汇总到质控与满意度分析，再反过来优化随访方案和模板。</p>
+      <div class="loop-cards"><div class="card loop-card ok reveal"><span class="k">OK</span><div><h3 data-en="Normal: auto-archived">正常：自动归档</h3><p data-en="Scores within thresholds are written to the patient record and the next follow-up node starts automatically, with no clinician time.">评分和数据在阈值内，结果写入患者档案，到期自动进入下一个随访节点，不占用医护时间。</p></div></div><div class="card loop-card warn reveal"><span class="k">!</span><div><h3 data-en="Abnormal: graded alerts">异常：分级预警</h3><p data-en="Red alerts reach the responsible doctor’s phone instantly with a deadline; overdue alerts escalate automatically, and every action is logged.">红色预警即时推送责任医生手机，限时处置；超时自动升级给上级医生或科主任，处置结果必须留痕。</p></div></div><div class="card loop-card miss reveal"><span class="k">?</span><div><h3 data-en="No response: manual follow-up">未响应：人工补访</h3><p data-en="Unanswered WeChat or SMS moves to phone or smart outbound calls; repeated misses enter lost-to-follow-up management via other contacts.">微信和短信超时未填写，转电话或智能外呼补访；多次联系不上进入失访管理，按多位联系人继续补访。</p></div></div><div class="card loop-card eval reveal"><span class="k">↻</span><div><h3 data-en="Evaluate &amp; improve">评价与改进</h3><p data-en="Satisfaction, complaints, follow-up and readmission rates roll up to the cockpit for quality audits, performance review and better plans.">满意度、投诉、随访率、再入院等指标汇总到管理驾驶舱，用于质控抽检、绩效考核和优化随访方案。</p></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="fu-arch">
+      <div class="card reveal">
+        <span class="eyebrow" data-en="Architecture">Architecture</span>
+        <h3 style="margin-top:20px"><span data-en="A configuration and template engine decides what each hospital sees">配置与模板引擎决定每家医院看到什么</span></h3>
+        <p data-en="The engine merges switches level by level — region → hospital → department → individual — to build each person’s home page and menus. Patient data stays in the hospital; the template centre syncs configuration only.">配置与模板引擎按“地区 → 医院 → 科室 → 个人”逐级合成功能开关，决定每个人的首页和菜单。患者数据留在医院本地，模板中心只同步配置。</p>
+      </div>
+      <div class="card reveal">
+        <span class="eyebrow" data-en="Recommendation">Recommendation</span>
+        <h3 style="margin-top:20px"><span data-en="Where the “most used” configuration comes from">“最常用配置”怎么来</span></h3>
+        <ul>
+          <li data-en="Operations only count which functions and templates hospitals use — never patient data.">平台运营端只统计各医院勾选了哪些功能、用了哪个模板，不涉及任何患者数据。</li>
+          <li data-en="Order: same department in-house → similar hospitals in the province → nationwide → expert default; it falls back when samples are thin.">推荐顺序：本院同科室 → 本省同类医院 → 全国同类医院 → 专家默认模板；样本不足时自动退回下一级。</li>
+          <li data-en="At launch, guideline-based expert templates are used; recommendations get closer to local practice as more hospitals join.">上线初期先用临床专家按指南编制的默认模板；接入医院越多，推荐越贴近当地习惯。</li>
+          <li data-en="Switching a function off keeps its data; hospitals review the diff before taking a template upgrade.">关闭功能不删除数据；模板升级时医院先看差异再决定是否更新。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section tight">
+  <div class="wrap">
+    <div class="card fu-open reveal">
+      <div>
+        <span class="eyebrow" data-en="Interactive Plan">Interactive Plan</span>
+        <h2 style="margin-top:18px;font-size:clamp(28px,3.4vw,44px)"><span data-en="Explore every page ">在总览图中</span><em data-en="in the interactive map">查看每一个页面</em></h2>
+        <p style="margin-top:14px" data-en="Click any page for its functions and links, or try the region → hospital → department configuration flow.">点击任意页面查看完整功能和跳转关系；在“开通与配置”中按地区、医院、科室试一试推荐配置。</p>
+        <p class="fu-disclaimer" data-en="Note: this is a product plan; numbers and recommendation sources in the configuration demo are illustrative.">说明：本系统为产品规划示意；“开通与配置”中的首页数字与推荐来源为演示数据。</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="../follow-up.html"><span data-en="Open the interactive plan">打开规划总览图</span><span class="arr out" aria-hidden="true">↗</span></a>
+        <a class="btn" href="../患者随访管理系统功能规划报告.pdf" target="_blank" rel="noopener"><span data-en="Download the planning report">下载功能规划报告</span><span class="arr out" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<nav class="wrap pager" aria-label="翻页" data-en-aria-label="Pagination"><a class="card prev" href="../datasets/"><small><span data-en="Previous">上一页</span> · 04</small><strong><span class="arr">←</span> <span data-en="Datasets">数据集</span></strong></a><a class="card next" href="../hospitals/"><small><span data-en="Next">下一页</span> · 06</small><strong><span data-en="Hospitals">合作医院</span> <span class="arr">→</span></strong></a></nav>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/img/logo-light.webp" alt="奇创纪元 Qichuang Era" width="560" height="234" loading="lazy">
+        <p><strong>北京奇创纪元科技有限公司</strong>Beijing Qichuang Era Technology Co., Ltd</p>
+        <p class="footer-mail"><span data-en="For collaboration: ">合作请联系：</span><a class="link" href="mailto:kangkang@qceratech.cn">kangkang@qceratech.cn</a></p>
+      </div>
+      <nav class="footer-col" aria-label="研究能力" data-en-aria-label="Capabilities">
+        <h4 data-en="Capabilities">研究能力</h4>
+        <a href="../platforms/"><span data-en="Platforms">实验平台</span></a>
+        <a href="../equipment/"><span data-en="Equipment">仪器设备</span></a>
+        <a href="../datasets/"><span data-en="Datasets">核心数据集</span></a>
+        <a href="../followup/"><span data-en="Follow-up platform">随访平台</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="合作网络" data-en-aria-label="Network">
+        <h4 data-en="Network">合作网络</h4>
+        <a href="../hospitals/"><span data-en="Hospitals">合作医院</span></a>
+        <a href="../partners/"><span data-en="Partners">合作单位</span></a>
+        <a href="https://ds-kb-lab.github.io/web-project/" target="_blank" rel="noopener"><span data-en="Dataset platform ↗">数据集详情平台 ↗</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="公司" data-en-aria-label="Company">
+        <h4 data-en="Company">公司</h4>
+        <a href="../"><span data-en="Home">首页</span></a>
+        <a href="../about/"><span data-en="About">关于我们</span></a>
+        <a href="../contact/"><span data-en="Contact">联系我们</span></a>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <span data-en="© 2026 Beijing Qichuang Era Technology Co., Ltd. All rights reserved.">© 2026 北京奇创纪元科技有限公司 版权所有</span>
+      <span>BEIJING · UTC+8 · <span class="clock" data-clock>--:--:--</span></span>
+    </div>
+  </div>
+  <div class="footer-word" aria-hidden="true">QICHUANG ERA</div>
+</footer>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/fx.js"></script>
+</body>
+</html>
